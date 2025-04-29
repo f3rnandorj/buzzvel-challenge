@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+:root {
+}
+
 *,
 *::before,
 *::after {
@@ -12,18 +15,21 @@ html {
   scroll-behavior: smooth;
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #0f172a;
+@theme {
+  --color-primary: #ea580c;
+  --color-secondary: #0f172a;
+  --color-background: #ffffff;
 }
 
 body {
   min-height: 100vh;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--color-background);
+  color: var(--color-secondary);
   font-family: var(--font-roboto), system-ui, -apple-system, sans-serif;
+
+  padding: 0 5rem;
 }
 
 ul,
@@ -41,6 +47,10 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+button {
+  cursor: pointer;
 }
 
 @media (prefers-reduced-motion: reduce) {
