@@ -45,10 +45,9 @@ export function Button({
   ...buttonProps
 }: ButtonProps) {
   const baseClasses = cn(
-    "flex items-center justify-center rounded-lg",
+    "flex items-center justify-center rounded-lg ",
     "transition-colors duration-200",
     "disabled:opacity-50 disabled:cursor-not-allowed",
-    "focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2",
     sizeClassesStyles[size],
     variantClassesStyles[variant],
     fullWidth ? "w-full" : "",
@@ -74,7 +73,7 @@ export function Button({
               className={cn(leftIcon.className, resolvedTextColor)}
             />
           ) : (
-            <div className="w-5" />
+            <div />
           )}
 
           <Text as="span" preset="item" className={resolvedTextColor}>
@@ -87,7 +86,7 @@ export function Button({
               className={cn(rightIcon.className, resolvedTextColor)}
             />
           ) : (
-            <div className="w-5" />
+            <div />
           )}
         </div>
       )}

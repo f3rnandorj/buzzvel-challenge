@@ -1,13 +1,6 @@
 @import "tailwindcss";
 
-:root {
-}
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
+* {
   box-sizing: border-box;
 }
 
@@ -18,7 +11,9 @@ html {
 @theme {
   --color-primary: #ea580c;
   --color-secondary: #0f172a;
+  --color-secondary-light: #2563eb;
   --color-background: #ffffff;
+  --color-gray-light: #475569;
 }
 
 body {
@@ -26,9 +21,11 @@ body {
   line-height: 1.5;
   text-rendering: optimizeSpeed;
   background: var(--color-background);
-  color: var(--color-secondary);
+  /* color: var(--color-secondary); */
   font-family: var(--font-roboto), system-ui, -apple-system, sans-serif;
 
+  max-width: 90rem;
+  margin: 0 auto;
   padding: 0 5rem;
 }
 

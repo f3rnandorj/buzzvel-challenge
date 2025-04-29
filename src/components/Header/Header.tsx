@@ -25,7 +25,7 @@ export function Header() {
         </nav>
       </div>
 
-      <div className="flex">
+      <div className="flex ">
         <Button title="Log In" variant="transparent" />
         <Button title="Sign Up Now" variant="outline" />
       </div>

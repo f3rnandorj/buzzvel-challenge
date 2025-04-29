@@ -13,7 +13,6 @@ export type TextVariants =
 export interface TextProps extends HTMLAttributes<HTMLElement> {
   as?: React.ElementType;
   preset?: TextVariants;
-  color?: string;
   children: ReactNode;
   className?: string;
 }
@@ -31,7 +30,6 @@ const variantClassesStyles: Record<TextVariants, string> = {
 export function Text({
   children,
   preset = "paragraph",
-  color = "text",
   as: Component = "p",
   className = "",
   ...props
@@ -41,7 +39,7 @@ export function Text({
 
   return (
     <Component
-      className={cn(`${baseClasses} text-${color} ${className}`)}
+      className={cn(`${baseClasses} text-secondary ${className}`)}
       {...props}
     >
       {children}
