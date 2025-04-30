@@ -8,8 +8,9 @@ export type TextVariants =
   | "paragraph"
   | "paragraphMedium"
   | "paragraphSmall"
-  | "link"
-  | "item";
+  | "paragraphNormal"
+  | "item"
+  | "itemSmall";
 
 export interface TextProps extends HTMLAttributes<HTMLElement> {
   as?: React.ElementType;
@@ -23,10 +24,11 @@ const variantClassesStyles: Record<TextVariants, string> = {
   subHeader: "text-[56px] leading-[110%] font-extrabold",
   descriptionHeader: "text-[32px] leading-[160%] font-light",
   paragraph: "text-[24px] leading-[160%] font-normal",
-  paragraphMedium: "text-[20px] leading-[180%] font-normal",
-  link: "text-[20px] leading-[120%] font-medium",
+  paragraphNormal: "text-[20px] leading-[180%] font-normal",
+  paragraphMedium: "text-[20px] leading-[120%] font-medium",
   paragraphSmall: "text-[18px] leading-[160%] font-normal",
   item: "text-[16px] font-medium",
+  itemSmall: "text-[14px] leading-[140%] font-normal",
 };
 
 export function Text({

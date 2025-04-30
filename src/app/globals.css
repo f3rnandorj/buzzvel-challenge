@@ -9,6 +9,13 @@ html {
 }
 
 @theme {
+  --color-purple-100: #f3e8ff;
+  --color-purple-800: #6b21a8;
+  --color-blue-100: #dbeafe;
+  --color-blue-800: #1e40af;
+  --color-green-100: #dcfce7;
+  --color-green-800: #166534;
+
   --color-primary: #ea580c;
   --color-secondary: #0f172a;
   --color-secondary-light: #2563eb;
