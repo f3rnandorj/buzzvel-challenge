@@ -4,6 +4,7 @@ import {
   HeroSection,
   SubHeroSection,
   CommunitySection,
+  MetricsSection,
 } from "@/components";
 
 export default function Home() {
@@ -18,6 +19,8 @@ export default function Home() {
       <ClientReviewCarouselSection />
 
       <CommunitySection />
+
+      <MetricsSection />
     </div>
   );
 }

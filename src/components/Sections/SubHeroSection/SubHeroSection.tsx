@@ -29,8 +29,8 @@ export function SubHeroSection() {
           src={images.subHeroImage}
           alt="Imagem de fundo mostrando um desktop"
           width={700}
-          height={570}
-          className="flex flex-1 h-full w-full -ml-10 mr-auto"
+          height={600}
+          className="flex flex-1 h-full w-full -ml-10 mr-auto -mt-10"
         />
 
         <div className="flex gap-4 absolute -bottom-4 right-26">
