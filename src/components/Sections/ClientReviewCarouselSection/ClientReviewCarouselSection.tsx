@@ -15,6 +15,14 @@ export function ClientReviewCarouselSection() {
 
   const swiperRef = useRef<SwiperRef>(null);
 
+  const handleDotClick = (index: number) => {
+    setActiveIndex(index);
+
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slideTo(index, 1000);
+    }
+  };
+
   return (
     <section className="h-[35rem] items-center bg-yellow-app w-screen relative left-1/2 -translate-x-1/2">
       <div className="flex flex-1 h-full w-full max-w-[90rem] mx-auto items-center gap-6 relative">
@@ -23,7 +31,7 @@ export function ClientReviewCarouselSection() {
           name="chevronLeft"
           color="text-white"
           size={48}
-          aria-label="Voltar slide anterior"
+          aria-label="Go to last slide"
         />
 
         <Swiper
@@ -44,13 +52,14 @@ export function ClientReviewCarouselSection() {
           name="chevronRight"
           color="text-secondary"
           size={48}
-          aria-label="Ir para o proximo slide"
+          aria-label="Go to next slide"
         />
 
         <SliderDots
           activeIndex={activeIndex}
           length={dataToMap.length}
-          className="absolute bottom-20 left-[5.5rem]"
+          className="absolute bottom-20 left-[5.5rem] z-50"
+          onDotClick={handleDotClick}
         />
       </div>
     </section>

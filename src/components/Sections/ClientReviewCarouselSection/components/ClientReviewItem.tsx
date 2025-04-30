@@ -40,7 +40,7 @@ export function ClientReviewItem({
       <div className="flex flex-row-reverse">
         <Image
           src={images.clientReviewImage}
-          alt="Imagem de fundo mostrando um desktop"
+          alt="Background showing a desktop image"
           width={700}
           height={570}
           className="w-[650px] h-[670px]"
