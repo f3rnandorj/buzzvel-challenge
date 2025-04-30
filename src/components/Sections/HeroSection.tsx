@@ -4,9 +4,13 @@ import Image from "next/image";
 
 export function HeroSection() {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center h-[44.5rem] ">
+    <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center h-[44rem] ">
       <div className="flex  flex-col order-1 lg:order-none gap-8">
-        <HighlightedTitle text="Teach" subtext="students worldwide" />
+        <HighlightedTitle
+          className="top-5"
+          text="Teach"
+          afterText="students worldwide"
+        />
 
         <Text as="p">
           Amet nunc diam orci duis ut sit diam arcu, nec. <br />

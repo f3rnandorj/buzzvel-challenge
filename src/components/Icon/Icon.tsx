@@ -1,7 +1,13 @@
 import React from "react";
 import { icons } from "@/assets";
 import { tailwindUtils } from "@/utils";
-import { ChevronDown, ChevronUp, PlayCircle } from "lucide-react";
+import {
+  ChevronDown,
+  ChevronUp,
+  PlayCircle,
+  Check,
+  ArrowRight,
+} from "lucide-react";
 
 export type IconName = keyof typeof Icons;
 
@@ -43,5 +49,7 @@ const Icons = {
   chevronDown: ChevronDown,
   chevronUp: ChevronUp,
   playCircle: PlayCircle,
+  check: Check,
+  arrowRight: ArrowRight,
   ...icons,
 };

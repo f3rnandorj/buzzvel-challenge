@@ -1,4 +1,4 @@
-import { Header, HeroSection } from "@/components";
+import { Header, HeroSection, SubHeroSection } from "@/components";
 
 export default function Home() {
   return (
@@ -6,6 +6,8 @@ export default function Home() {
       <Header />
 
       <HeroSection />
+
+      <SubHeroSection />
     </div>
   );
 }

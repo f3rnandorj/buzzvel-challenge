@@ -21,9 +21,9 @@ export interface ButtonProps
 const { cn } = tailwindUtils;
 
 const variantClassesStyles: Record<ButtonVariant, string> = {
-  primary: "bg-primary text-background hover:bg-primary-dark",
+  primary: "bg-primary text-background hover:bg-secondary",
   outline:
-    "bg-background text-secondary border-[3px] border-secondary hover:bg-gray-50",
+    "bg-background text-secondary border-[3px] border-secondary hover:bg-gray-100",
   transparent: "text-secondary bg-transparent hover:bg-gray-100",
 };
 
@@ -46,7 +46,7 @@ export function Button({
 }: ButtonProps) {
   const baseClasses = cn(
     "flex items-center justify-center rounded-lg ",
-    "transition-colors duration-200",
+    "transition-colors duration-500",
     "disabled:opacity-50 disabled:cursor-not-allowed",
     sizeClassesStyles[size],
     variantClassesStyles[variant],

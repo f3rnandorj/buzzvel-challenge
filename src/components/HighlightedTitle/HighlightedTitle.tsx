@@ -1,15 +1,43 @@
-import { Text } from "@/components";
+import { Text, TextProps } from "@/components";
+import { tailwindUtils } from "@/utils";
+
+interface Props {
+  textPreset?: TextProps["preset"];
+  text: string;
+  prevText?: string;
+  afterText?: string;
+  className: string;
+}
 
 export function HighlightedTitle({
+  textPreset = "header",
   text,
-  subtext,
-}: {
-  text: string;
-  subtext: string;
-}) {
+  prevText,
+  afterText,
+  className,
+}: Props) {
+  const { cn } = tailwindUtils;
+
+  function renderTextWithLineBreaks(text?: string) {
+    if (!text) return null;
+
+    return text.split("\n").map((line, index) => (
+      <span key={index}>
+        {line}
+        {index < text.split("\n").length - 1 && <br />}
+      </span>
+    ));
+  }
+
   return (
     <div>
-      <div className="relative top-5 inline-block mr-2">
+      {prevText && (
+        <Text as="span" className="align-middle" preset={textPreset}>
+          {prevText}
+        </Text>
+      )}
+
+      <div className={cn("relative inline-block mr-3.5", className)}>
         <svg
           className="absolute bottom-0 left-0 w-full h-[23px] z-0"
           viewBox="0 0 252 23"
@@ -25,14 +53,16 @@ export function HighlightedTitle({
           />
         </svg>
 
-        <Text as="span" className="relative z-10 " preset="header">
+        <Text as="span" className="relative z-10 " preset={textPreset}>
           {text}
         </Text>
       </div>
 
-      <Text as="span" className="align-middle" preset="header">
-        {subtext}
-      </Text>
+      {afterText && (
+        <Text as="span" className="align-middle" preset={textPreset}>
+          {renderTextWithLineBreaks(afterText)}
+        </Text>
+      )}
     </div>
   );
 }
