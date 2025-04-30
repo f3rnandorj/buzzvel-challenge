@@ -1,2 +1,2 @@
-export * from "./HeroSection";
-export * from "./SubHeroSection";
+export * from "./HeroSection/HeroSection";
+export * from "./SubHeroSection/SubHeroSection";

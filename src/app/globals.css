@@ -21,7 +21,6 @@ body {
   line-height: 1.5;
   text-rendering: optimizeSpeed;
   background: var(--color-background);
-  /* color: var(--color-secondary); */
   font-family: var(--font-roboto), system-ui, -apple-system, sans-serif;
 
   max-width: 90rem;

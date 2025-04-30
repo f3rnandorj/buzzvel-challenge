@@ -1,9 +1,11 @@
 import { HighlightedTitle, Icon, Text } from "@/components";
 import Link from "next/link";
+import Image from "next/image";
+import { images } from "@/assets";
 
 export function SubHeroSection() {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center h-[44rem] ">
+    <section className="grid grid-cols-1 lg:grid-cols-[490px_1fr]   items-center h-[44rem]">
       <div className="flex flex-col gap-8">
         <HighlightedTitle
           className="top-3.5"
@@ -37,7 +39,13 @@ export function SubHeroSection() {
         </Link>
       </div>
 
-      <div></div>
+      <Image
+        src={images.subHeroImage}
+        alt="Imagem de fundo mostrando um desktop"
+        width={700}
+        height={570}
+        className="h-[570px] w-full -mr-10 ml-auto"
+      />
     </section>
   );
 }
