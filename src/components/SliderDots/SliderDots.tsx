@@ -1,11 +1,16 @@
+import { tailwindUtils } from "@/utils";
+
 interface Props {
   activeIndex: number;
   length: number;
+  className?: string;
 }
 
-export function SliderDots({ activeIndex, length }: Props) {
+export function SliderDots({ activeIndex, length, className }: Props) {
+  const { cn } = tailwindUtils;
+
   return (
-    <div className="absolute bottom-20 left-[5.5rem] flex items-center gap-2">
+    <div className={cn("flex items-center gap-2", className)}>
       {Array.from({ length }, (_, i) => i).map((index) => (
         <span
           key={index}

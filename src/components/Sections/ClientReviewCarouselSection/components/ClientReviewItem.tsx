@@ -3,7 +3,7 @@ import { Text } from "@/components";
 import { tailwindUtils } from "@/utils";
 import Image from "next/image";
 
-interface TestimonialCardProps {
+export interface TestimonialCardProps {
   text: string;
   author: string;
   role: string;
@@ -43,7 +43,7 @@ export function ClientReviewItem({
           alt="Imagem de fundo mostrando um desktop"
           width={700}
           height={570}
-          className="  w-[650px] h-[670px] -my-14"
+          className="w-[650px] h-[670px]"
         />
       </div>
     </div>
