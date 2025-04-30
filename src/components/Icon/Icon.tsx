@@ -4,6 +4,8 @@ import { tailwindUtils } from "@/utils";
 import {
   ChevronDown,
   ChevronUp,
+  ChevronLeft,
+  ChevronRight,
   PlayCircle,
   Check,
   ArrowRight,
@@ -48,6 +50,8 @@ export function Icon({
 const Icons = {
   chevronDown: ChevronDown,
   chevronUp: ChevronUp,
+  chevronLeft: ChevronLeft,
+  chevronRight: ChevronRight,
   playCircle: PlayCircle,
   check: Check,
   arrowRight: ArrowRight,

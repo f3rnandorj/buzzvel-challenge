@@ -6,7 +6,7 @@ import { ServiceCard } from "./components/ServiceCard";
 
 export function SubHeroSection() {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-[30.625rem_1fr]   items-center h-[44rem] -mr-20 ml-auto">
+    <section className="grid grid-cols-1 lg:grid-cols-[30.625rem_1fr]   items-center h-[44rem] -mr-20 ml-auto mb-16">
       <div className="flex flex-col gap-8">
         <HighlightedTitle
           className="top-3.5"

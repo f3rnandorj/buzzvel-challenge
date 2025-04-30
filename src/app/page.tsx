@@ -1,4 +1,9 @@
-import { Header, HeroSection, SubHeroSection } from "@/components";
+import {
+  ClientReviewCarouselSection,
+  Header,
+  HeroSection,
+  SubHeroSection,
+} from "@/components";
 
 export default function Home() {
   return (
@@ -8,6 +13,8 @@ export default function Home() {
       <HeroSection />
 
       <SubHeroSection />
+
+      <ClientReviewCarouselSection />
     </div>
   );
 }

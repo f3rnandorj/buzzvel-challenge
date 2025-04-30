@@ -19,6 +19,9 @@ html {
   --color-primary: #ea580c;
   --color-secondary: #0f172a;
   --color-secondary-light: #2563eb;
+
+  --color-yellow-app: #facc15;
+
   --color-background: #ffffff;
   --color-gray-light: #475569;
 }
