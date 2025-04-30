@@ -1,5 +1,4 @@
-import { HighlightedTitle, Icon, Text } from "@/components";
-import Link from "next/link";
+import { CallToActionLink, HighlightedTitle, Icon, Text } from "@/components";
 import Image from "next/image";
 import { images } from "@/assets";
 import { ServiceCard } from "./components/ServiceCard";
@@ -9,7 +8,7 @@ export function SubHeroSection() {
     <section className="grid grid-cols-1 lg:grid-cols-[30.625rem_1fr]   items-center h-[44rem] -mr-20 ml-auto mb-16">
       <div className="flex flex-col gap-8">
         <HighlightedTitle
-          className="top-3.5"
+          className="top-[0.9rem]"
           textPreset="subHeader"
           prevText="An "
           text="all-in-one"
@@ -22,22 +21,7 @@ export function SubHeroSection() {
           <CheckItem text="Ullamcorper ornare in et egestas dolor orci." />
         </div>
 
-        <Link
-          href=""
-          className="flex group items-center self-start gap-3 hover:text-primary"
-        >
-          <Text
-            as="span"
-            preset="paragraphMedium"
-            className="text-secondary-light group-hover:text-primary"
-          >
-            Find more about the app
-          </Text>
-          <Icon
-            name="arrowRight"
-            className="text-secondary-light hover:cursor-pointer group-hover:text-primary"
-          />
-        </Link>
+        <CallToActionLink href="" text="Find more about the app" />
       </div>
 
       <div className="relative">

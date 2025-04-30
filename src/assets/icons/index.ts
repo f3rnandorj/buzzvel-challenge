@@ -3,6 +3,7 @@ import brand2 from "./brand2.svg";
 import brand3 from "./brand3.svg";
 import brand4 from "./brand4.svg";
 import brand5 from "./brand5.svg";
+import plane from "./plane.svg";
 
 export const icons = {
   brand1,
@@ -10,4 +11,5 @@ export const icons = {
   brand3,
   brand4,
   brand5,
+  plane,
 };

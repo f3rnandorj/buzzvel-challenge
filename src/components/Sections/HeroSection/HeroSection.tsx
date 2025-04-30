@@ -46,7 +46,7 @@ export function HeroSection() {
       <div className="order-2 lg:order-none flex justify-center lg:justify-end">
         <Image
           src={images.heroImage}
-          alt="Imagem de uma troca de mensagens entre professor e estudante"
+          alt="Image of an exchange of messages between teacher and student"
           width={625}
           height={545}
         />

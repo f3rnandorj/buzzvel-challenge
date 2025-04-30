@@ -13,7 +13,7 @@ export type TextVariants =
   | "itemSmall";
 
 export interface TextProps extends HTMLAttributes<HTMLElement> {
-  as?: React.ElementType;
+  as: React.ElementType;
   preset?: TextVariants;
   children: ReactNode;
   className?: string;
@@ -34,7 +34,7 @@ const variantClassesStyles: Record<TextVariants, string> = {
 export function Text({
   children,
   preset = "paragraph",
-  as: Component = "p",
+  as: Component,
   className = "",
   ...props
 }: TextProps) {

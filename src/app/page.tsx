@@ -3,6 +3,7 @@ import {
   Header,
   HeroSection,
   SubHeroSection,
+  CommunitySection,
 } from "@/components";
 
 export default function Home() {
@@ -15,6 +16,8 @@ export default function Home() {
       <SubHeroSection />
 
       <ClientReviewCarouselSection />
+
+      <CommunitySection />
     </div>
   );
 }
