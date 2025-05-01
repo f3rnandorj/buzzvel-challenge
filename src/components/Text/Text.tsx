@@ -21,20 +21,6 @@ export interface TextProps extends HTMLAttributes<HTMLElement> {
   className?: string;
 }
 
-const variantClassesStyles: Record<TextVariants, string> = {
-  header: "text-[4.5rem] leading-[1.1] font-extrabold", // 72px
-  subHeader: "text-[3.5rem] leading-[1.1] font-extrabold", // 56px
-  descriptionHeader: "text-[2rem] leading-[1.6] font-light", // 32px
-  paragraph: "text-[1.5rem] leading-[1.6] font-normal", // 24px
-  paragraphNormal: "text-[1.25rem] leading-[1.8] font-normal", // 20px
-  paragraphMedium: "text-[1.25rem] leading-[1.2] font-medium", // 20px
-  paragraphSmall: "text-[1.125rem] leading-[1.6] font-normal", // 18px
-  item: "text-[1rem] font-medium", // 16px
-  itemNormal: "text-[1rem] leading-[1.4] font-normal", // 16px
-  itemSmall: "text-[0.875rem] leading-[1.4] font-normal", // 14px
-  interParagraphNormal: "text-[1.125rem] leading-[1.6] font-normal font-inter", // 18px
-};
-
 export function Text({
   children,
   preset = "paragraph",
@@ -54,3 +40,24 @@ export function Text({
     </Component>
   );
 }
+
+const variantClassesStyles: Record<TextVariants, string> = {
+  header:
+    "text-[2.5rem] leading-[1.1] font-bold md:text-[4.5rem] md:leading-[1.1] md:font-extrabold",
+  subHeader:
+    "text-[1.5rem] leading-[1.1] font-bold md:text-[3.5rem] md:leading-[1.1] md:font-extrabold",
+  descriptionHeader:
+    "text-[1.125rem] leading-[1.6] font-normal md:text-[2rem] md:leading-[1.6] md:font-light",
+  paragraph:
+    "text-[1.125rem] leading-[1.4] font-normal md:text-[1.5rem] md:leading-[1.6] md:font-normal",
+  paragraphNormal:
+    "text-[1rem] leading-[1.4] font-normal md:text-[1.25rem] md:leading-[1.8] md:font-normal",
+  paragraphMedium:
+    "text-[1rem] leading-[1.1] font-medium md:text-[1.25rem] md:leading-[1.2] md:font-medium",
+  paragraphSmall: "text-[1.125rem] leading-[1.6] font-normal",
+  item: "text-[1rem] font-medium md:text-[1rem] md:font-medium",
+  itemNormal: "text-[1rem] leading-[1.4] font-normal",
+  itemSmall:
+    "text-[0.75rem] leading-[1.4] font-normal md:text-[0.875rem] md:leading-[1.4] md:font-normal",
+  interParagraphNormal: "text-[1.125rem] leading-[1.6] font-normal font-inter",
+};

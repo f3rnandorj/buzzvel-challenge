@@ -24,7 +24,7 @@ export function Header() {
           priority
         />
 
-        <nav className="hidden lg:flex items-center justify-between w-full gap-12">
+        <nav className="hidden md:flex items-center justify-between w-full gap-12">
           <NavItem href="" title="Products" />
           <NavItem href="" title="Solutions" />
           <NavItem href="" title="Pricing" />
@@ -40,7 +40,7 @@ export function Header() {
       </div>
 
       {/* Signin / SignUp */}
-      <div className="hidden lg:flex">
+      <div className="hidden md:flex">
         <Button title="Log In" variant="transparent" />
         <Button title="Sign Up Now" variant="outline" />
       </div>
@@ -50,7 +50,7 @@ export function Header() {
         name="menu"
         onClick={() => setIsOpen(true)}
         size={24}
-        className="sm:hidden  text-[#0B0E18]"
+        className="md:hidden  text-[#0B0E18]"
         aria-label="Open menu"
       />
       {isOpen && <DrawerMobile setIsOpen={setIsOpen} />}
