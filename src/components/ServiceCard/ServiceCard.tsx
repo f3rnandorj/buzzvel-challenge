@@ -8,9 +8,10 @@ interface Props {
   type: CardStatus;
   title: string;
   text: string;
+  onClick?: () => void;
 }
 
-export function ServiceCard({ text, title, type }: Props) {
+export function ServiceCard({ text, title, type, onClick }: Props) {
   const { cn } = tailwindUtils;
 
   function getCardColor(): string {
@@ -46,6 +47,7 @@ export function ServiceCard({ text, title, type }: Props) {
         title="Take Lesson"
         variant="outline"
         className="text-secondary-light border-[3px] border-secondary-light hover:bg-gray-100"
+        onClick={onClick}
       />
     </div>
   );

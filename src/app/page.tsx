@@ -6,6 +6,7 @@ import {
   CommunitySection,
   MetricsSection,
   TestimonialsSection,
+  FeaturesSection,
 } from "@/components";
 
 export default function Home() {
@@ -24,6 +25,8 @@ export default function Home() {
       <MetricsSection />
 
       <TestimonialsSection />
+
+      <FeaturesSection />
     </div>
   );
 }

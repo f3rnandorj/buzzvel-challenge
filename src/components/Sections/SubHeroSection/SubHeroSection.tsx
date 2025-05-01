@@ -1,7 +1,7 @@
 import { CallToActionLink, HighlightedTitle, Icon, Text } from "@/components";
 import Image from "next/image";
 import { images } from "@/assets";
-import { ServiceCard } from "./components/ServiceCard";
+import { ServiceCard } from "@/components";
 
 export function SubHeroSection() {
   return (

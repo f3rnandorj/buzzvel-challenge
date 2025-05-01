@@ -5,5 +5,6 @@ export * from "./Button/Button";
 export * from "./HighlightedTitle/HighlightedTitle";
 export * from "./SliderDots/SliderDots";
 export * from "./CallToActionLink/CallToActionLink";
+export * from "./ServiceCard/ServiceCard";
 
 export * from "./Sections";

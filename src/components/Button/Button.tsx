@@ -1,3 +1,5 @@
+"use client";
+
 import { Icon, IconProps, Text } from "@/components";
 import { tailwindUtils } from "@/utils";
 import { ReactNode } from "react";
