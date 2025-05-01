@@ -7,4 +7,4 @@ export * from "./SliderDots/SliderDots";
 export * from "./CallToActionLink/CallToActionLink";
 export * from "./ServiceCard/ServiceCard";
 
-export * from "./Sections";
+export * from "./HomeSections";

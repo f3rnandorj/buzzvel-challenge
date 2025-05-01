@@ -8,7 +8,14 @@ export function Header() {
   return (
     <div className="flex flex-1 h-24 items-center justify-between gap-12">
       <div className="flex items-center gap-12">
-        <Image src="/logo.svg" alt="Logo" width={100} height={40} priority />
+        <Image
+          src="/logo.svg"
+          alt="Logo"
+          width={100}
+          height={40}
+          className="h-10 w-24"
+          priority
+        />
 
         <nav className="flex gap-12">
           <NavItem href="" title="Products" />

@@ -3,6 +3,8 @@ import subHeroImage from "./subHeroImage.png";
 import clientReviewImage from "./clientReviewImage.png";
 import communityImage from "./communityImage.png";
 import featuresImage from "./featuresImage.png";
+import signUpImageRight from "./signUpImageRight.png";
+import signUpImageLeft from "./signUpImageLeft.png";
 
 import userThumb from "./userThumb.png";
 import userThumb1 from "./userThumb1.png";
@@ -16,6 +18,8 @@ export const images = {
   clientReviewImage,
   communityImage,
   featuresImage,
+  signUpImageRight,
+  signUpImageLeft,
   userThumb,
   userThumb1,
   userThumb2,

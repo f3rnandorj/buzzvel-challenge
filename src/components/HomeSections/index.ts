@@ -5,3 +5,4 @@ export * from "./CommunitySection/CommunitySection";
 export * from "./MetricsSection/MetricsSection";
 export * from "./TestimonialsSection/TestimonialsSection";
 export * from "./FeaturesSection/FeaturesSection";
+export * from "./SignUpSection/SignUpSection";
