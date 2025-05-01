@@ -37,9 +37,9 @@ export function HighlightedTitle({
         </Text>
       )}
 
-      <div className={cn("relative inline-block mr-3.5", className)}>
+      <div className={cn("relative inline-block mr-2 md:mr-3.5", className)}>
         <svg
-          className="absolute bottom-0 left-0 w-full h-[23px] z-0"
+          className="absolute -bottom-1 left-1 md:bottom-0 md:left-1 w-full h-[23px] z-0"
           viewBox="0 0 252 23"
           fill="none"
           preserveAspectRatio="none"

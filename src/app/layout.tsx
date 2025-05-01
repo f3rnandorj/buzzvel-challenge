@@ -33,7 +33,9 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} ${robotoMono.variable} ${inter.variable} antialiased`}
       >
-        {children}
+        <div className="max-w-[90rem] mx-auto px-4 sm:px-8 lg:px-20">
+          {children}
+        </div>
       </body>
     </html>
   );

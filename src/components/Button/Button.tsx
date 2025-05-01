@@ -28,8 +28,8 @@ const variantClassesStyles: Record<ButtonVariant, string> = {
 };
 
 const sizeClassesStyles: Record<ButtonSize, string> = {
-  M: "px-7 py-3 min-h-12 text-base",
-  XL: "px-12 py-5 min-h-16 text-lg",
+  M: "px-7 py-3 min-h-12",
+  XL: "px-7 py-4 min-h-6 sm:px-12 sm:py-5 sm:min-h-16",
 };
 
 export function Button({
