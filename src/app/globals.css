@@ -24,6 +24,8 @@ html {
 
   --color-background: #ffffff;
   --color-gray-light: #475569;
+
+  --font-inter: Inter, sans-serif;
 }
 
 body {

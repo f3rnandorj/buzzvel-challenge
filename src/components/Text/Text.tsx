@@ -11,6 +11,7 @@ export type TextVariants =
   | "paragraphNormal"
   | "item"
   | "itemNormal"
+  | "interParagraphNormal"
   | "itemSmall";
 
 export interface TextProps extends HTMLAttributes<HTMLElement> {
@@ -21,16 +22,17 @@ export interface TextProps extends HTMLAttributes<HTMLElement> {
 }
 
 const variantClassesStyles: Record<TextVariants, string> = {
-  header: "text-[72px] leading-[110%] font-extrabold",
-  subHeader: "text-[56px] leading-[110%] font-extrabold",
-  descriptionHeader: "text-[32px] leading-[160%] font-light",
-  paragraph: "text-[24px] leading-[160%] font-normal",
-  paragraphNormal: "text-[20px] leading-[180%] font-normal",
-  paragraphMedium: "text-[20px] leading-[120%] font-medium",
-  paragraphSmall: "text-[18px] leading-[160%] font-normal",
-  item: "text-[16px] font-medium",
-  itemNormal: "text-[16px] leading-[140%] font-normal",
-  itemSmall: "text-[14px] leading-[140%] font-normal",
+  header: "text-[4.5rem] leading-[1.1] font-extrabold", // 72px
+  subHeader: "text-[3.5rem] leading-[1.1] font-extrabold", // 56px
+  descriptionHeader: "text-[2rem] leading-[1.6] font-light", // 32px
+  paragraph: "text-[1.5rem] leading-[1.6] font-normal", // 24px
+  paragraphNormal: "text-[1.25rem] leading-[1.8] font-normal", // 20px
+  paragraphMedium: "text-[1.25rem] leading-[1.2] font-medium", // 20px
+  paragraphSmall: "text-[1.125rem] leading-[1.6] font-normal", // 18px
+  item: "text-[1rem] font-medium", // 16px
+  itemNormal: "text-[1rem] leading-[1.4] font-normal", // 16px
+  itemSmall: "text-[0.875rem] leading-[1.4] font-normal", // 14px
+  interParagraphNormal: "text-[1.125rem] leading-[1.6] font-normal font-inter", // 18px
 };
 
 export function Text({

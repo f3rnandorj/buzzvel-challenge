@@ -6,3 +6,4 @@ export * from "./MetricsSection/MetricsSection";
 export * from "./TestimonialsSection/TestimonialsSection";
 export * from "./FeaturesSection/FeaturesSection";
 export * from "./SignUpSection/SignUpSection";
+export * from "./GetInTouchSection/GetInTouchSection";

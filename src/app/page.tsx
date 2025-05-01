@@ -8,6 +8,7 @@ import {
   TestimonialsSection,
   FeaturesSection,
   SignUpSection,
+  GetInTouchSection,
 } from "@/components";
 
 export default function Home() {
@@ -30,6 +31,8 @@ export default function Home() {
       <FeaturesSection />
 
       <SignUpSection />
+
+      <GetInTouchSection />
     </div>
   );
 }

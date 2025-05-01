@@ -6,5 +6,6 @@ export * from "./HighlightedTitle/HighlightedTitle";
 export * from "./SliderDots/SliderDots";
 export * from "./CallToActionLink/CallToActionLink";
 export * from "./ServiceCard/ServiceCard";
+export * from "./TextInput/TextInput";
 
 export * from "./HomeSections";

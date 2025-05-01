@@ -1,5 +1,3 @@
-"use client";
-
 import { Button, Text } from "@/components";
 
 export function SignUpCallToAction() {
@@ -14,7 +12,7 @@ export function SignUpCallToAction() {
         elit et fringilla habitant ut facilisi.
       </Text>
 
-      <Button title="Sign Up Now" className="w-[15rem]" />
+      <Button title="Sign Up Now" className="w-[15rem]" size="XL" />
     </div>
   );
 }
