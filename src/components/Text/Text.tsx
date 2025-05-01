@@ -10,6 +10,7 @@ export type TextVariants =
   | "paragraphSmall"
   | "paragraphNormal"
   | "item"
+  | "itemNormal"
   | "itemSmall";
 
 export interface TextProps extends HTMLAttributes<HTMLElement> {
@@ -28,6 +29,7 @@ const variantClassesStyles: Record<TextVariants, string> = {
   paragraphMedium: "text-[20px] leading-[120%] font-medium",
   paragraphSmall: "text-[18px] leading-[160%] font-normal",
   item: "text-[16px] font-medium",
+  itemNormal: "text-[16px] leading-[140%] font-normal",
   itemSmall: "text-[14px] leading-[140%] font-normal",
 };
 

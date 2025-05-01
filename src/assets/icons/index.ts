@@ -9,6 +9,8 @@ import plane from "./plane.svg";
 import heart from "./heart.svg";
 import diamond from "./diamond.svg";
 import mortarboard from "./mortarboard.svg";
+import arrowLeftCircle from "./arrowLeftCircle.svg";
+import arrowRightCircle from "./arrowRightCircle.svg";
 
 export const icons = {
   brand1,
@@ -20,4 +22,6 @@ export const icons = {
   heart,
   diamond,
   mortarboard,
+  arrowLeftCircle,
+  arrowRightCircle,
 };
