@@ -11,6 +11,8 @@ import {
   ArrowRight,
   Globe,
   Euro,
+  Menu,
+  X,
 } from "lucide-react";
 
 export type IconName = keyof typeof Icons;
@@ -59,5 +61,7 @@ const Icons = {
   arrowRight: ArrowRight,
   globe: Globe,
   euro: Euro,
+  x: X,
+  menu: Menu,
   ...icons,
 };

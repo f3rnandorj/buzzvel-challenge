@@ -9,7 +9,7 @@ interface Props {
   items: { href: string; title: string }[];
 }
 
-export function DropdownNavItem({ title, items }: Props) {
+export function DropdownNavItemDesktop({ title, items }: Props) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -33,7 +33,7 @@ export function DropdownNavItem({ title, items }: Props) {
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 hover:text-primary transition-colors cursor-pointer group"
       >
-        <Text as="span" preset="item">
+        <Text as="span" preset="item" className={"group-hover:text-primary"}>
           {title}
         </Text>
         <Icon

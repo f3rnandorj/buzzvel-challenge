@@ -1,12 +1,19 @@
-import Image from "next/image";
+"use client";
 
+import Image from "next/image";
+import { useState } from "react";
 import { NavItem } from "./components/NavItem";
-import { DropdownNavItem } from "./components/DropdownNavItem";
+import { DropdownNavItemDesktop } from "./components/DropdownNavItemDesktop";
 import { Button } from "../Button/Button";
+import { DrawerMobile } from "./components/DrawerMobile";
+import { Icon } from "../Icon/Icon";
 
 export function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="flex flex-1 h-24 items-center justify-between gap-12">
+    <div className="flex flex-1 h-24 items-center justify-between gap-12 mx-4">
+      {/* Desktop Nav */}
       <div className="flex items-center gap-12">
         <Image
           src="/logo.svg"
@@ -17,11 +24,11 @@ export function Header() {
           priority
         />
 
-        <nav className="flex gap-12">
+        <nav className="hidden lg:flex items-center justify-between w-full gap-12">
           <NavItem href="" title="Products" />
           <NavItem href="" title="Solutions" />
           <NavItem href="" title="Pricing" />
-          <DropdownNavItem
+          <DropdownNavItemDesktop
             title="Resources"
             items={[
               { href: "/docs", title: "Documentation" },
@@ -32,10 +39,21 @@ export function Header() {
         </nav>
       </div>
 
-      <div className="flex ">
+      {/* Signin / SignUp */}
+      <div className="hidden lg:flex">
         <Button title="Log In" variant="transparent" />
         <Button title="Sign Up Now" variant="outline" />
       </div>
+
+      {/* Mobile Drawer*/}
+      <Icon
+        name="menu"
+        onClick={() => setIsOpen(true)}
+        size={24}
+        className="sm:hidden  text-[#0B0E18]"
+        aria-label="Open menu"
+      />
+      {isOpen && <DrawerMobile setIsOpen={setIsOpen} />}
     </div>
   );
 }
