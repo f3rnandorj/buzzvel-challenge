@@ -1,4 +1,5 @@
-import { Button, Text, TextInput } from "@/components";
+import { Text } from "@/components";
+import { GetInTouchForm } from "./components/GetInTouchForm";
 
 export function GetInTouchSection() {
   return (
@@ -12,25 +13,7 @@ export function GetInTouchSection() {
           Sit elit feugiat turpis sed integer integer accumsan turpis.
         </Text>
 
-        <div className="flex flex-col gap-5">
-          <TextInput
-            label="Email"
-            className="w-[31.25rem]"
-            placeholder="Enter your email"
-          />
-          <TextInput
-            as="textarea"
-            label="Message"
-            className="w-[31.25rem] h-[8.75rem]"
-            placeholder="What are you say ?"
-          />
-        </div>
-
-        <Button
-          title="Request Demo"
-          size="XL"
-          className="w-[16.25rem] bg-[#111729] hover:bg-secondary-light"
-        />
+        <GetInTouchForm />
       </div>
     </section>
   );

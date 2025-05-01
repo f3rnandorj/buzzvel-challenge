@@ -35,8 +35,8 @@ export function TextInput({
 
   const baseClassNameStyles =
     "w-full h-full pl-6 pr-10 py-[1.0625rem] rounded-lg bg-white text-secondary font-inter font-medium text-[0.875rem] placeholder-[#a6a6a6] focus:outline-none";
-  const inputClassName = "";
-  const textareaClassName = "resize-none";
+  const inputClassNameStyles = "";
+  const textareaClassNameStyles = "resize-none";
 
   return (
     <div className={cn("w-[100%] flex flex-col", className)}>
@@ -53,13 +53,13 @@ export function TextInput({
       <div className="relative flex flex-1 items-center">
         {as === "textarea" ? (
           <textarea
-            className={cn(baseClassNameStyles, textareaClassName)}
+            className={cn(baseClassNameStyles, textareaClassNameStyles)}
             {...(props as React.TextareaHTMLAttributes<HTMLTextAreaElement>)}
           />
         ) : (
           <input
             type="text"
-            className={cn(baseClassNameStyles, inputClassName)}
+            className={cn(baseClassNameStyles, inputClassNameStyles)}
             {...(props as React.InputHTMLAttributes<HTMLInputElement>)}
           />
         )}
@@ -72,11 +72,7 @@ export function TextInput({
       </div>
 
       {errorMessage && (
-        <Text
-          as="span"
-          preset="interParagraphNormal"
-          className="mt-1 text-red-500"
-        >
+        <Text as="span" preset="item" className="mt-2 text-red-950">
           {errorMessage}
         </Text>
       )}

@@ -8,4 +8,6 @@ export * from "./CallToActionLink/CallToActionLink";
 export * from "./ServiceCard/ServiceCard";
 export * from "./TextInput/TextInput";
 
+export * from "./Form/TextInputControlled";
+
 export * from "./HomeSections";
