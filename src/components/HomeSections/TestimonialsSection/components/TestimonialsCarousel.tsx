@@ -9,45 +9,28 @@ interface Props {
   swiperRef: RefObject<SwiperRef | null>;
 }
 
+const APP_WINDOW_WIDTH = 1440;
+const APP_WINDOW_PADDING = 80;
+
+const CONTENT_WITH_PADDING = APP_WINDOW_WIDTH + APP_WINDOW_PADDING * 2;
+
 export function TestimonialsCarousel({ swiperRef }: Props) {
   const [windowWidth, setWindowWidth] = useState<number>(0);
 
-  const getSlidesPerView = () => {
+  function getSlidesPerView() {
     if (windowWidth < 830) return 1;
-    if (windowWidth < 1024) return 2;
-    if (windowWidth < 1280) return 2;
-    if (windowWidth < 1700) return 3;
+    if (windowWidth < 1220) return 2;
+    if (windowWidth < 2050) return 3;
     if (windowWidth < 1920) return 4;
     if (windowWidth < 2560) return 5;
     if (windowWidth < 3440) return 6;
     return 7;
-  };
+  }
 
-  const getSpaceBetween = () => {
-    if (windowWidth < 640) return 16;
-    if (windowWidth < 768) return 16;
-    if (windowWidth < 1024) return 20;
-    if (windowWidth < 1536) return 24;
-    if (windowWidth < 1920) return 40;
-    if (windowWidth < 2560) return 60;
-    if (windowWidth < 3440) return 80;
-    return 100;
-  };
-
-  const getOffset = () => {
-    if (windowWidth < 640) return 0;
-    if (windowWidth < 768) return 10;
-    if (windowWidth < 1024) return 20;
-    if (windowWidth < 1280) return 40;
-    if (windowWidth < 1366) return 60;
-    if (windowWidth < 1440) return 80;
-    if (windowWidth < 1536) return 100;
-    if (windowWidth < 1700) return 150;
-    if (windowWidth < 1920) return 200;
-    if (windowWidth < 2560) return 300;
-    if (windowWidth < 3440) return 350;
-    return 400;
-  };
+  const margin =
+    windowWidth > CONTENT_WITH_PADDING
+      ? (windowWidth - APP_WINDOW_WIDTH + APP_WINDOW_PADDING * 2) / 2
+      : 0;
 
   useEffect(() => {
     const handleResize = () => {
@@ -67,11 +50,11 @@ export function TestimonialsCarousel({ swiperRef }: Props) {
     <div className="flex ">
       <Swiper
         ref={swiperRef}
-        className="w-full h-[20rem] ml-auto"
+        className="w-full h-[20rem]"
         slidesPerView={getSlidesPerView()}
-        spaceBetween={getSpaceBetween()}
-        slidesOffsetBefore={getOffset()}
-        slidesOffsetAfter={getOffset()}
+        spaceBetween={24}
+        slidesOffsetBefore={margin}
+        slidesOffsetAfter={margin}
       >
         {testimonialsToMap.map((testimonial) => (
           <SwiperSlide key={testimonial.testimonial}>

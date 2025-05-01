@@ -12,7 +12,7 @@ export function TestimonialsSection() {
 
   return (
     <section className="flex flex-col h-[39rem] pt-20 space-y-20 w-screen relative left-1/2 -translate-x-1/2">
-      <div className="flex w-full items-center justify-between max-w-[90rem]  mx-auto">
+      <div className="flex w-full items-center justify-between max-w-[90rem]  mx-auto px-20">
         <Text as="h2" preset="subHeader">
           What everyone says
         </Text>

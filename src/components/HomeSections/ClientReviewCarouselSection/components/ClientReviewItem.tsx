@@ -21,7 +21,7 @@ export function ClientReviewItem({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 lg:grid-cols-[36rem_1fr] h-full w-full max-w-[90rem] mx-auto p-6 items-center",
+        "grid grid-cols-1 lg:grid-cols-[34rem_1fr] h-full w-full max-w-[90rem] mx-auto p-6 items-center",
         className
       )}
     >
@@ -37,13 +37,13 @@ export function ClientReviewItem({
         </Text>
       </div>
 
-      <div className="flex flex-row-reverse">
+      <div className="flex flex-1 flex-row-reverse">
         <Image
           src={images.clientReviewImage}
           alt="Background showing a desktop image"
           width={700}
-          height={570}
-          className="w-[650px] h-[670px]"
+          height={620}
+          className="w-[43.75rem] h-[38.75rem] overflow-visible"
         />
       </div>
     </div>

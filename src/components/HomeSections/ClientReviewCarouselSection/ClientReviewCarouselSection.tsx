@@ -25,7 +25,7 @@ export function ClientReviewCarouselSection() {
 
   return (
     <section className="h-[35rem] items-center bg-yellow-app w-screen relative left-1/2 -translate-x-1/2">
-      <div className="flex flex-1 h-full w-full max-w-[90rem] mx-auto items-center gap-6 relative">
+      <div className="flex flex-1 h-full w-full max-w-[90rem] mx-auto px-20 items-center gap-4 relative">
         <Icon
           onClick={() => swiperRef.current?.swiper.slidePrev(1000)}
           name="chevronLeft"
@@ -58,7 +58,7 @@ export function ClientReviewCarouselSection() {
         <SliderDots
           activeIndex={activeIndex}
           length={dataToMap.length}
-          className="absolute bottom-20 left-[5.5rem] z-50"
+          className="absolute bottom-20 left-[10rem] z-50"
           onDotClick={handleDotClick}
         />
       </div>
