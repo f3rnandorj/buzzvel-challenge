@@ -9,6 +9,8 @@ import {
   PlayCircle,
   Check,
   ArrowRight,
+  Globe,
+  Euro,
 } from "lucide-react";
 
 export type IconName = keyof typeof Icons;
@@ -55,5 +57,7 @@ const Icons = {
   playCircle: PlayCircle,
   check: Check,
   arrowRight: ArrowRight,
+  globe: Globe,
+  euro: Euro,
   ...icons,
 };

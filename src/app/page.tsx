@@ -9,6 +9,7 @@ import {
   FeaturesSection,
   SignUpSection,
   GetInTouchSection,
+  FooterSection,
 } from "@/components";
 
 export default function Home() {
@@ -33,6 +34,8 @@ export default function Home() {
       <SignUpSection />
 
       <GetInTouchSection />
+
+      <FooterSection />
     </div>
   );
 }
