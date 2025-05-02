@@ -11,13 +11,13 @@ export function TestimonialsSection() {
   const swiperRef = useRef<SwiperRef>(null);
 
   return (
-    <section className="flex flex-col h-[39rem] pt-20 space-y-20 w-screen relative left-1/2 -translate-x-1/2">
-      <div className="flex w-full items-center justify-between max-w-[90rem]  mx-auto px-20">
+    <section className="flex flex-col min-h-[33rem] md:min-h-[39rem] pt-12 md:pt-20 space-y-8 md:space-y-20 w-screen relative left-1/2 -translate-x-1/2 px-4 sm:px-8 lg:px-20 ">
+      <div className="flex w-full items-center justify-between max-w-[90rem]  mx-auto">
         <Text as="h2" preset="subHeader">
           What everyone says
         </Text>
 
-        <div className="flex items-center justify-between gap-6">
+        <div className="items-center justify-between gap-6 hidden md:flex">
           <Icon
             name="arrowLeftCircle"
             size={48}

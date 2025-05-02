@@ -15,7 +15,7 @@ export function TestimonialItem({
   imageUri,
 }: TestimonialItemProps) {
   return (
-    <div className="flex flex-col items-center h-[19.06rem] w-[25.75rem] p-8 shadow-lg gap-8 rounded-2xl">
+    <div className="flex flex-col items-center h-[21.25rem] w-[19.375rem] md:h-[19.06rem] md:w-[25.75rem] p-4 md:p-8 shadow-lg gap-8 rounded-2xl">
       <Text as="p" preset="paragraphSmall">
         {testimonial}
       </Text>

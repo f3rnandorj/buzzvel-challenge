@@ -18,7 +18,8 @@ export function TestimonialsCarousel({ swiperRef }: Props) {
   const [windowWidth, setWindowWidth] = useState<number>(0);
 
   function getSlidesPerView() {
-    if (windowWidth < 830) return 1;
+    if (windowWidth < 768) return 1.2;
+    if (windowWidth < 830) return 1.6;
     if (windowWidth < 1220) return 2;
     if (windowWidth < 2050) return 3;
     if (windowWidth < 1920) return 4;
@@ -47,14 +48,14 @@ export function TestimonialsCarousel({ swiperRef }: Props) {
   }, []);
 
   return (
-    <div className="flex ">
+    <div className="flex">
       <Swiper
         ref={swiperRef}
-        className="w-full h-[20rem]"
+        className="w-full min-h-[23rem] md:min-h-[20rem]"
         slidesPerView={getSlidesPerView()}
         spaceBetween={24}
         slidesOffsetBefore={margin}
-        slidesOffsetAfter={margin}
+        slidesOffsetAfter={windowWidth > CONTENT_WITH_PADDING ? margin : 20}
       >
         {testimonialsToMap.map((testimonial) => (
           <SwiperSlide key={testimonial.testimonial}>
