@@ -4,23 +4,26 @@ import Image from "next/image";
 
 export function CommunitySection() {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center h-[44rem] ">
-      <div>
+    <section className="grid grid-cols-1 md:grid-cols-2 gap-11 lg:gap-20 items-center min-h-[44rem] w-full pt-4 md:pt-0 pb-12 md:pb-0">
+      <div className="order-1 md:order-2">
         <Image
           src={images.communityImage}
           alt="Photos of students and people studying"
           width={600}
           height={650}
-          className="w-[37.5rem] h-[40.625rem]"
+          className="w-full h-full md:w-[37.5rem] md:h-[40.625rem]"
         />
       </div>
 
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-6 md:gap-8">
         <Text as="h2" preset="subHeader" className="relative inline-block">
           Meet{" "}
           <Text as="span" preset="subHeader" className="relative inline-block">
             international
-            <Icon name="plane" size={64} className="absolute -top-11 right-4" />
+            <Icon
+              name="plane"
+              className="size-6 md:size-16 absolute -top-4 right-2 md:-top-11 md:right-4"
+            />
           </Text>{" "}
           students & teachers
         </Text>
@@ -32,7 +35,11 @@ export function CommunitySection() {
           aenean lorem faucibus integer.
         </Text>
 
-        <CallToActionLink href="" text="Explore teachers and students" />
+        <CallToActionLink
+          href=""
+          text="Explore teachers and students"
+          className="pt-2 md:pt-4"
+        />
       </div>
     </section>
   );
