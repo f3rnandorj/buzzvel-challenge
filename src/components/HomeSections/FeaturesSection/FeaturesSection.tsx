@@ -9,10 +9,10 @@ import {
 
 export function FeaturesSection() {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-[37rem_1fr] gap-12 lg:gap-20 items-center h-[40rem] -mr-20 ml-auto mb-16">
-      <div className="flex flex-col gap-8">
+    <section className="grid grid-cols-1 lg:grid-cols-[37rem_1fr] gap-12 lg:gap-20 items-center min-h-[40rem] lg:-mr-20 lg:ml-auto lg:mb-16">
+      <div className="flex flex-col gap-6 md:gap-8 ">
         <HighlightedTitle
-          className="top-[0.9rem]"
+          containerClassName="flex flex-wrap items-center gap-x-2"
           textPreset="subHeader"
           prevText="All the cool "
           text="features"
@@ -25,19 +25,23 @@ export function FeaturesSection() {
           viverra a, neque orci.
         </Text>
 
-        <CallToActionLink href="" text="View all the features" />
+        <CallToActionLink
+          href=""
+          text="View all the features"
+          className="pt-3 pb-4 sm:pb-0"
+        />
       </div>
 
-      <div className="relative">
+      <div className="relative -ml-7 -mr-30 sm:-ml-7 sm:-mr-30">
         <Image
           src={images.featuresImage}
           alt="Imagem de fundo mostrando um desktop"
           width={600}
           height={500}
-          className="flex flex-1 h-[31.2rem] w-[37.5rem]  -mt-10"
+          className="flex flex-1 h-[28.75rem] w-[28.5rem] sm:h-[31.2rem] sm:w-[37.5rem] -mt-10"
         />
 
-        <div className="flex gap-4 absolute -top-3 left-14">
+        <div className="flex gap-4 absolute -top-8 left-8 sm:-top-3 sm:left-14">
           <ServiceCard
             type="Popular"
             title="Design for how people think"

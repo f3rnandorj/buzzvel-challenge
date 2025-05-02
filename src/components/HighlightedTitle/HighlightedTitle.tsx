@@ -6,7 +6,8 @@ interface Props {
   text: string;
   prevText?: string;
   afterText?: string;
-  className: string;
+  className?: string;
+  containerClassName?: string;
 }
 
 export function HighlightedTitle({
@@ -15,6 +16,7 @@ export function HighlightedTitle({
   prevText,
   afterText,
   className,
+  containerClassName,
 }: Props) {
   const { cn } = tailwindUtils;
 
@@ -30,7 +32,7 @@ export function HighlightedTitle({
   }
 
   return (
-    <div>
+    <div className={containerClassName}>
       {prevText && (
         <Text as="span" className="align-middle" preset={textPreset}>
           {prevText}
@@ -39,7 +41,7 @@ export function HighlightedTitle({
 
       <div className={cn("relative inline-block mr-2 md:mr-3.5", className)}>
         <svg
-          className="absolute -bottom-1 left-1 md:bottom-0 md:left-1 w-full h-[23px] z-0"
+          className="absolute -bottom-2 left-1 md:bottom-0 md:left-1 w-full h-[23px] z-0"
           viewBox="0 0 252 23"
           fill="none"
           preserveAspectRatio="none"

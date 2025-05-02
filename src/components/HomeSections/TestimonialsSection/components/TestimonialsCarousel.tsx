@@ -31,7 +31,7 @@ export function TestimonialsCarousel({ swiperRef }: Props) {
   const margin =
     windowWidth > CONTENT_WITH_PADDING
       ? (windowWidth - APP_WINDOW_WIDTH + APP_WINDOW_PADDING * 2) / 2
-      : 0;
+      : 20;
 
   useEffect(() => {
     const handleResize = () => {
@@ -48,14 +48,14 @@ export function TestimonialsCarousel({ swiperRef }: Props) {
   }, []);
 
   return (
-    <div className="flex">
+    <div className="flex -mx-4">
       <Swiper
         ref={swiperRef}
-        className="w-full min-h-[23rem] md:min-h-[20rem]"
+        className="w-full min-h-[23rem]  md:min-h-[20rem]"
         slidesPerView={getSlidesPerView()}
         spaceBetween={24}
         slidesOffsetBefore={margin}
-        slidesOffsetAfter={windowWidth > CONTENT_WITH_PADDING ? margin : 20}
+        slidesOffsetAfter={margin}
       >
         {testimonialsToMap.map((testimonial) => (
           <SwiperSlide key={testimonial.testimonial}>
