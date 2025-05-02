@@ -5,6 +5,8 @@ import communityImage from "./communityImage.png";
 import featuresImage from "./featuresImage.png";
 import signUpImageRight from "./signUpImageRight.png";
 import signUpImageLeft from "./signUpImageLeft.png";
+import signUpImageTop from "./signUpImageTop.png";
+import signUpImageBottom from "./signUpImageBottom.png";
 
 import userThumb from "./userThumb.png";
 import userThumb1 from "./userThumb1.png";
@@ -20,6 +22,8 @@ export const images = {
   featuresImage,
   signUpImageRight,
   signUpImageLeft,
+  signUpImageTop,
+  signUpImageBottom,
   userThumb,
   userThumb1,
   userThumb2,

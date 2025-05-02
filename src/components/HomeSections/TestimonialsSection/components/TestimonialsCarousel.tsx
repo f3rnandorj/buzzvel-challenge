@@ -1,9 +1,10 @@
-import { RefObject, useEffect, useState } from "react";
+import { RefObject } from "react";
 import { images } from "@/assets";
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import { TestimonialItem, TestimonialItemProps } from "./TestimonialItem";
+import { useGetWindowWidth } from "@/hooks";
 
 interface Props {
   swiperRef: RefObject<SwiperRef | null>;
@@ -15,7 +16,7 @@ const APP_WINDOW_PADDING = 80;
 const CONTENT_WITH_PADDING = APP_WINDOW_WIDTH + APP_WINDOW_PADDING * 2;
 
 export function TestimonialsCarousel({ swiperRef }: Props) {
-  const [windowWidth, setWindowWidth] = useState<number>(0);
+  const { windowWidth } = useGetWindowWidth();
 
   function getSlidesPerView() {
     if (windowWidth < 768) return 1.2;
@@ -32,20 +33,6 @@ export function TestimonialsCarousel({ swiperRef }: Props) {
     windowWidth > CONTENT_WITH_PADDING
       ? (windowWidth - APP_WINDOW_WIDTH + APP_WINDOW_PADDING * 2) / 2
       : 20;
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <div className="flex -mx-4">
