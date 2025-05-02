@@ -11,7 +11,7 @@ export function MetricItem({ description, iconName, value }: MetricItemProps) {
     <div className="flex flex-col justify-center items-center gap-4">
       <Icon name={iconName} color="text-yellow-app" size={64} />
 
-      <Text as="h2" preset="header" className="text-yellow-app">
+      <Text as="h2" preset="header" className="text-yellow-app font-extrabold">
         {value}
       </Text>
 

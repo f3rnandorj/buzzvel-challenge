@@ -49,7 +49,7 @@ const variantClassesStyles: Record<TextVariants, string> = {
   descriptionHeader:
     "text-[1.125rem] leading-[1.6] font-normal md:text-[2rem] md:leading-[1.6] md:font-light",
   paragraph:
-    "text-[1.125rem] leading-[1.4] font-normal md:text-[1.5rem] md:leading-[1.6] md:font-normal",
+    "text-[1rem] leading-[1.4] font-normal md:text-[1.5rem] md:leading-[1.6] md:font-normal",
   paragraphNormal:
     "text-[1rem] leading-[1.4] font-normal md:text-[1.25rem] md:leading-[1.8] md:font-normal",
   paragraphMedium:
