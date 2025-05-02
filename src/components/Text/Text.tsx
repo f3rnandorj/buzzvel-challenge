@@ -33,7 +33,7 @@ export function Text({
 
   return (
     <Component
-      className={cn(`${baseClasses} text-secondary ${className}`)}
+      className={cn(`${baseClasses}text-secondary ${className}`)}
       {...props}
     >
       {children}

@@ -5,8 +5,10 @@ import { HeroSectionParagraph } from "./components/HeroSectionParagraph";
 
 export function HeroSection() {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center h-[44rem] mb-22 sm:mb-0">
-      <div className="flex  flex-col order-1 lg:order-none gap-8">
+    <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center min-h-[44rem] w-full">
+      <div className="bg-amber-500 w-full h-full"></div>
+
+      <div className="flex flex-col lg:order-none gap-8">
         <HighlightedTitle
           className="top-2.5 md:top-5"
           text="Teach"
@@ -16,12 +18,17 @@ export function HeroSection() {
         <HeroSectionParagraph />
 
         <div className="flex lg:pb-12">
-          <Button title="Sign Up Now" size="XL" />
+          <Button
+            title="Sign Up Now"
+            size="XL"
+            className="flex flex-1 lg:block lg:flex-none"
+          />
           <Button
             leftIcon={{ name: "playCircle", color: "secondary-light" }}
             title="View Demo"
             size="XL"
             variant="transparent"
+            className="flex flex-1 lg:block lg:flex-none"
           />
         </div>
 
@@ -48,7 +55,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="order-2 lg:order-none flex justify-center lg:justify-end">
+      <div className="flex justify-center lg:justify-end">
         <Image
           src={images.heroImage}
           alt="Image of an exchange of messages between teacher and student"

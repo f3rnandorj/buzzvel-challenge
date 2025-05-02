@@ -12,7 +12,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex flex-1 h-24 items-center justify-between gap-12">
+    <div className="flex flex-1 w-full h-24 items-center justify-between gap-12">
       {/* Desktop Nav */}
       <div className="flex items-center gap-12">
         <Image
@@ -50,7 +50,7 @@ export function Header() {
         name="menu"
         onClick={() => setIsOpen(true)}
         size={24}
-        className="md:hidden  text-[#0B0E18]"
+        className="md:hidden  text-secondary"
         aria-label="Open menu"
       />
       {isOpen && <DrawerMobile setIsOpen={setIsOpen} />}

@@ -23,12 +23,12 @@ const { cn } = tailwindUtils;
 const variantClassesStyles: Record<ButtonVariant, string> = {
   primary: "bg-primary text-background hover:bg-secondary",
   outline:
-    "bg-background text-secondary border-[3px] border-secondary hover:bg-gray-100",
+    "bg-background text-secondary border-[3px] border-secondary hover:bg-gray-200",
   transparent: "text-secondary bg-transparent hover:bg-gray-100",
 };
 
 const sizeClassesStyles: Record<ButtonSize, string> = {
-  M: "px-7 py-3 min-h-12",
+  M: "px-3 py-2 min-h-10 sm:px-7 sm:py-3 sm:min-h-12",
   XL: "px-7 py-4 min-h-6 sm:px-12 sm:py-5 sm:min-h-16",
 };
 
@@ -76,7 +76,11 @@ export function Button({
             <div />
           )}
 
-          <Text as="span" preset="item" className={resolvedTextColor}>
+          <Text
+            as="span"
+            preset="item"
+            className={cn(resolvedTextColor, size === "M" ? "text-sm" : "")}
+          >
             {title}
           </Text>
 

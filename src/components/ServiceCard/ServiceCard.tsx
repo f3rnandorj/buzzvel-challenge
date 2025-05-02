@@ -4,14 +4,14 @@ import { tailwindUtils } from "@/utils";
 
 type CardStatus = "Featured" | "Popular" | "New";
 
-interface Props {
+export interface ServiceCardProps {
   type: CardStatus;
   title: string;
   text: string;
   onClick?: () => void;
 }
 
-export function ServiceCard({ text, title, type, onClick }: Props) {
+export function ServiceCard({ text, title, type, onClick }: ServiceCardProps) {
   const { cn } = tailwindUtils;
 
   function getCardColor(): string {
@@ -28,7 +28,7 @@ export function ServiceCard({ text, title, type, onClick }: Props) {
   }
 
   return (
-    <div className="flex flex-col w-[12.5rem] h-[14.5rem] shadow-lg bg-white p-4 rounded-2xl  gap-2">
+    <div className="flex flex-col w-[10rem] sm:w-[12.5rem] h-[14.5rem] shadow-lg bg-white p-4 rounded-lg gap-2">
       <div className={cn("w-fit px-2 rounded", `${getCardColor()}`)}>
         <Text as="span" preset="itemSmall">
           {type}
@@ -39,14 +39,15 @@ export function ServiceCard({ text, title, type, onClick }: Props) {
         {title}
       </Text>
 
-      <Text as="p" preset="itemSmall">
+      <Text as="p" preset="itemSmall" className="flex flex-1">
         {text}
       </Text>
 
       <Button
         title="Take Lesson"
         variant="outline"
-        className="text-secondary-light border-[3px] border-secondary-light hover:bg-gray-100"
+        className=" border-secondary-light"
+        textColor="text-secondary-light"
         onClick={onClick}
       />
     </div>

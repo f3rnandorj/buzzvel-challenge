@@ -1,68 +1,52 @@
-import { CallToActionLink, HighlightedTitle, Icon, Text } from "@/components";
+import { CallToActionLink, Text } from "@/components";
 import Image from "next/image";
 import { images } from "@/assets";
-import { ServiceCard } from "@/components";
+import { SubHeroHighlightedTitle } from "./components/SubHeroHighlightedTitle";
+import { SubHeroCheckItem } from "./components/SubHeroCheckItem";
+import { ListServiceCard } from "./components/ListServiceCard";
 
 export function SubHeroSection() {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-[30.625rem_1fr]   items-center h-[44rem] -mr-20 ml-auto mb-16">
+    <section className="grid grid-cols-1 lg:grid-cols-[30.625rem_1fr] items-center min-h-[44rem] w-full -mb-16 sm:mb-20 ">
+      {/* Texts */}
       <div className="flex flex-col gap-8">
-        <HighlightedTitle
-          className="top-[0.9rem]"
-          textPreset="subHeader"
-          prevText="An "
-          text="all-in-one"
-          afterText={"app\nthat makes it easier"}
-        />
+        <SubHeroHighlightedTitle />
+
+        <Text as="p" preset="paragraphNormal" className="inline sm:hidden">
+          Sit elit feugiat turpis sed integer integer accumsan
+          <br />
+          turpis. Sed suspendisse nec lorem mauris.
+          <br />
+          Pharetra, eu imperdiet ipsum ultrices amet, dui sit suspendisse.
+        </Text>
 
         <div>
-          <CheckItem text="Est et in pharetra magna adipiscing ornare aliquam." />
-          <CheckItem text="Tellus arcu sed consequat ac velit ut eu blandit." />
-          <CheckItem text="Ullamcorper ornare in et egestas dolor orci." />
+          {checkItemTextsToMap.map((text, index) => (
+            <SubHeroCheckItem key={index} text={text} />
+          ))}
         </div>
 
         <CallToActionLink href="" text="Find more about the app" />
       </div>
 
-      <div className="relative">
+      {/* Image with Service Cards */}
+      <div className="relative pt-10 sm:pt-0 overflow-visible -ml-24 sm:mx-0">
         <Image
           src={images.subHeroImage}
           alt="Imagem de fundo mostrando um desktop"
           width={700}
           height={600}
-          className="flex flex-1 h-full w-full -ml-10 mr-auto -mt-10"
+          className="flex flex-1 h-full"
         />
 
-        <div className="flex gap-4 absolute -bottom-4 right-26">
-          <ServiceCard
-            type="Featured"
-            title="The map of mathematics"
-            text="Egestas elit dui scelerisque ut eu purus aliquam vitae habitasse."
-          />
-          <ServiceCard
-            type="Popular"
-            title="Design for how people think"
-            text="Aliquam ut euismod condimentum elementum ultricies volutpat sit non. "
-          />
-          <ServiceCard
-            type="New"
-            title="International & commercial law"
-            text="Molestie integer eu arcu, mauris bibendum rhoncus imperdiet dui. "
-          />
-        </div>
+        <ListServiceCard />
       </div>
     </section>
   );
 }
 
-function CheckItem({ text }: { text: string }) {
-  return (
-    <div className="flex items-center">
-      <Icon name="check" className="mr-2" />
-
-      <Text as="p" preset="paragraphNormal">
-        {text}
-      </Text>
-    </div>
-  );
-}
+const checkItemTextsToMap = [
+  "Est et in pharetra magna adipiscing ornare aliquam.",
+  "Tellus arcu sed consequat ac velit ut eu blandit.",
+  "Ullamcorper ornare in et egestas dolor orci.",
+];
