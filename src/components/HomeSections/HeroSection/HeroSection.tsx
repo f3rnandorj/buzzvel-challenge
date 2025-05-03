@@ -6,8 +6,6 @@ import { HeroSectionParagraph } from "./components/HeroSectionParagraph";
 export function HeroSection() {
   return (
     <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center min-h-[44rem] w-full">
-      <div className="bg-amber-500 w-full h-full"></div>
-
       <div className="flex flex-col lg:order-none gap-8">
         <HighlightedTitle
           className="top-2.5 md:top-5"
@@ -34,8 +32,7 @@ export function HeroSection() {
 
         <div className="sm:flex items-center justify-around">
           <Text as="span" preset="item" className="text-gray-light">
-            <span className="hidden md:inline"></span>
-            <span className="hidden sm:inline md:hidden">
+            <span className="hidden sm:inline ">
               Trusted by
               <br />
               leading companies

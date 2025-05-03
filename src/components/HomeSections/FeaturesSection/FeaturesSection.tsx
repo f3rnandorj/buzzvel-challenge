@@ -32,16 +32,16 @@ export function FeaturesSection() {
         />
       </div>
 
-      <div className="relative -ml-7 -mr-30 sm:-ml-7 sm:-mr-30">
+      <div className="relative -ml-7 -mr-30 sm:-ml-7 sm:-mr-30 overflow-x-hidden">
         <Image
           src={images.featuresImage}
           alt="Imagem de fundo mostrando um desktop"
           width={600}
           height={500}
-          className="flex flex-1 h-[28.75rem] w-[28.5rem] sm:h-[31.2rem] sm:w-[37.5rem] -mt-10"
+          className="flex flex-1 h-[28.75rem] w-[28.5rem] sm:h-[31.2rem] sm:w-[37.5rem]"
         />
 
-        <div className="flex gap-4 absolute -top-8 left-8 sm:-top-3 sm:left-14">
+        <div className="flex gap-4 absolute top-1.5 left-8 sm:top-6.5 sm:left-14">
           <ServiceCard
             type="Popular"
             title="Design for how people think"

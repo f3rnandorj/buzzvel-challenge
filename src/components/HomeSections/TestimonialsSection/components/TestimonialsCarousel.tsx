@@ -35,7 +35,7 @@ export function TestimonialsCarousel({ swiperRef }: Props) {
       : 20;
 
   return (
-    <div className="flex -mx-4">
+    <div className="flex -mx-4 sm:mx-0">
       <Swiper
         ref={swiperRef}
         className="w-full min-h-[23rem]  md:min-h-[20rem]"

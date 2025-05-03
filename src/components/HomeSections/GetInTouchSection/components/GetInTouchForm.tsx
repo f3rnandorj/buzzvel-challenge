@@ -30,14 +30,14 @@ export function GetInTouchForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col items-center gap-8"
+      className="flex flex-col items-center gap-8 w-full "
     >
-      <div className="flex flex-col items-center gap-5">
+      <div className="flex flex-col items-center gap-5 w-full">
         <TextInputControlled
           name="email"
           control={control}
           label="Email"
-          className="w-[31.25rem]"
+          className="w-full sm:w-[31.25rem]"
           placeholder="Enter your email"
           alt="Input to type your email"
         />
@@ -47,7 +47,10 @@ export function GetInTouchForm() {
           control={control}
           as="textarea"
           label="Message"
-          className={cn("w-[31.25rem] h-[8.75rem]", errors.message && "mb-2")}
+          className={cn(
+            "w-full sm:w-[31.25rem] h-[8.75rem]",
+            errors.message && "mb-2"
+          )}
           placeholder="What are you say ?"
           aria-label="Input to type your message to us"
         />
@@ -56,7 +59,7 @@ export function GetInTouchForm() {
       <Button
         title="Request Demo"
         size="XL"
-        className="w-[16.25rem] bg-[#111729] hover:bg-secondary-light"
+        className="w-full sm:w-[16.25rem] bg-[#111729] hover:bg-secondary-light"
         type="submit"
         aria-label="Button to submit the form"
       />

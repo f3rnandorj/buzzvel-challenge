@@ -4,8 +4,8 @@ import Image from "next/image";
 
 export function CommunitySection() {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 gap-11 lg:gap-20 items-center min-h-[44rem] w-full pt-4 md:pt-0 pb-12 md:pb-0">
-      <div className="order-1 md:order-2">
+    <section className="grid grid-cols-1 md:grid-cols-2 gap-11 lg:gap-20 items-center min-h-[44rem] w-full pt-4 md:pt-0 mb-12 md:mb-4">
+      <div className="order-2 sm:order-1">
         <Image
           src={images.communityImage}
           alt="Photos of students and people studying"
@@ -15,7 +15,7 @@ export function CommunitySection() {
         />
       </div>
 
-      <div className="flex flex-col gap-6 md:gap-8">
+      <div className="flex flex-col gap-6 md:gap-8 order-1 sm:order-2">
         <Text as="h2" preset="subHeader" className="relative inline-block">
           Meet{" "}
           <Text as="span" preset="subHeader" className="relative inline-block">
