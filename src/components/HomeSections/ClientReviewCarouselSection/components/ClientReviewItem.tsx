@@ -1,5 +1,6 @@
 import { images } from "@/assets";
 import { Text } from "@/components";
+import { useGetWindowWidth } from "@/hooks";
 import { tailwindUtils } from "@/utils";
 import Image from "next/image";
 
@@ -19,6 +20,7 @@ export function ClientReviewItem({
   className,
 }: TestimonialCardProps) {
   const { cn } = tailwindUtils;
+  const { windowWidth } = useGetWindowWidth();
 
   return (
     <div
@@ -45,7 +47,10 @@ export function ClientReviewItem({
           alt={alterText}
           width={700}
           height={620}
-          className="scale-140 pr-4 sm:scale-100 sm:pr-0 sm:w-[43.75rem] sm:h-[38.75rem] "
+          className={cn(
+            "pr-4 sm:scale-100 sm:pr-0 sm:w-[43.75rem] sm:h-[38.75rem]",
+            windowWidth < 500 ? "scale-140" : ""
+          )}
         />
       </div>
     </div>

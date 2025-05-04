@@ -15,13 +15,13 @@ export function ClientReviewCarouselSection() {
 
   const swiperRef = useRef<SwiperRef>(null);
 
-  const handleDotClick = (index: number) => {
+  function handleDotClick(index: number) {
     setActiveIndex(index);
 
     if (swiperRef.current) {
       swiperRef.current.swiper.slideTo(index, 1000);
     }
-  };
+  }
 
   return (
     <div className="relative w-screen left-[50%] right-[50%] mx-[-50vw]">
@@ -62,7 +62,7 @@ export function ClientReviewCarouselSection() {
           <SliderDots
             activeIndex={activeIndex}
             length={dataToMap.length}
-            className="absolute bottom-112 left-4 sm:bottom-145 sm:left-22 lg:bottom-14 lg:left-37 z-50"
+            className="absolute bottom-120 left-4 sm:bottom-145 sm:left-22 lg:bottom-14 lg:left-37 z-50"
             onDotClick={handleDotClick}
           />
         </div>
