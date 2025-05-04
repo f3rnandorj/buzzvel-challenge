@@ -28,7 +28,7 @@ export function ServiceCard({ text, title, type, onClick }: ServiceCardProps) {
   }
 
   return (
-    <div className="flex flex-col w-[10rem] sm:w-[12.5rem] h-[14.5rem] shadow-lg bg-white p-4 rounded-lg gap-2">
+    <div className="flex flex-col w-[10.5rem] sm:w-[13.5rem] h-[14.5rem] shadow-lg bg-white p-4 rounded-lg gap-2">
       <div className={cn("w-fit px-2 rounded", `${getCardColor()}`)}>
         <Text as="span" preset="itemSmall">
           {type}

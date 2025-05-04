@@ -12,7 +12,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex flex-1 w-full h-24 items-center justify-between gap-12">
+    <div className="flex flex-1 w-full h-24 items-center justify-between gap-12 max-w-[90rem] px-4 sm:px-8 lg:px-20 mx-auto mb-6 md:mb-12">
       {/* Desktop Nav */}
       <div className="flex items-center gap-12">
         <Image

@@ -19,7 +19,7 @@ export function TestimonialsCarousel({ swiperRef }: Props) {
   const { windowWidth } = useGetWindowWidth();
 
   function getSlidesPerView() {
-    if (windowWidth < 768) return 1.2;
+    if (windowWidth < 768) return 1.3;
     if (windowWidth < 830) return 1.6;
     if (windowWidth < 1220) return 2;
     if (windowWidth < 2050) return 3;
@@ -35,7 +35,7 @@ export function TestimonialsCarousel({ swiperRef }: Props) {
       : 20;
 
   return (
-    <div className="flex -mx-4 sm:mx-0">
+    <div className="flex -mx-1 sm:mx-0">
       <Swiper
         ref={swiperRef}
         className="w-full min-h-[23rem]  md:min-h-[20rem]"

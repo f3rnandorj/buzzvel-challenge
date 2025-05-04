@@ -33,11 +33,7 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} ${robotoMono.variable} ${inter.variable} antialiased`}
       >
-        <div className="flex h-screen justify-center w-full">
-          <div className="relative w-full max-w-[90rem] px-4 sm:px-8 lg:px-20 overflow-x-hidden md:overflow-x-visible">
-            {children}
-          </div>
-        </div>
+        <div className="h-screen overflow-x-hidden relative">{children}</div>
       </body>
     </html>
   );

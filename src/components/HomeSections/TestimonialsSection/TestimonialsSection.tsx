@@ -11,31 +11,29 @@ export function TestimonialsSection() {
   const swiperRef = useRef<SwiperRef>(null);
 
   return (
-    <div className="relative w-screen left-[50%] right-[50%] mx-[-50vw]">
-      <section className="flex flex-col min-h-[33rem] md:min-h-[39rem] pt-12 md:pt-20 space-y-8 md:space-y-20 px-4">
-        <div className="flex w-full items-center justify-between max-w-[90rem] mx-auto sm:px-8 lg:px-20">
-          <Text as="h2" preset="subHeader">
-            What everyone says
-          </Text>
+    <section className="w-full my-8 md:my-12">
+      <div className="max-w-[90rem] px-4 sm:px-8 lg:px-20 mx-auto flex w-full items-center justify-between">
+        <Text as="h2" preset="subHeader" className="mb-8 lg:mb-16">
+          What everyone says
+        </Text>
 
-          <div className="items-center justify-between gap-6 hidden md:flex">
-            <Icon
-              name="arrowLeftCircle"
-              size={48}
-              color="text-primary"
-              onClick={() => swiperRef.current?.swiper.slidePrev(1000)}
-            />
-            <Icon
-              name="arrowRightCircle"
-              size={48}
-              color="text-primary"
-              onClick={() => swiperRef.current?.swiper.slideNext(1000)}
-            />
-          </div>
+        <div className="items-center justify-between gap-6 hidden md:flex">
+          <Icon
+            name="arrowLeftCircle"
+            size={48}
+            color="text-primary"
+            onClick={() => swiperRef.current?.swiper.slidePrev(1000)}
+          />
+          <Icon
+            name="arrowRightCircle"
+            size={48}
+            color="text-primary"
+            onClick={() => swiperRef.current?.swiper.slideNext(1000)}
+          />
         </div>
+      </div>
 
-        <TestimonialsCarousel swiperRef={swiperRef} />
-      </section>
-    </div>
+      <TestimonialsCarousel swiperRef={swiperRef} />
+    </section>
   );
 }

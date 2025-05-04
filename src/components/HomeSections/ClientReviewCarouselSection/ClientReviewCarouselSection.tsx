@@ -24,50 +24,48 @@ export function ClientReviewCarouselSection() {
   }
 
   return (
-    <div className="relative w-screen left-[50%] right-[50%] mx-[-50vw]">
-      <section className="min-h-[35rem] lg:min-h-[35rem] items-center bg-[#f3ce49] mb-10 sm:mb-0">
-        <div className="flex max-w-[90rem] mx-auto sm:px-18 items-center gap-4 relative ">
-          <Icon
-            onClick={() => swiperRef.current?.swiper.slidePrev(1000)}
-            name="chevronLeft"
-            color="text-white"
-            size={48}
-            aria-label="Go to last slide"
-            className="hidden md:hidden lg:block"
-          />
+    <section className="w-full bg-[#f3ce49] my-6 md:my-20">
+      <div className="flex items-center gap-4 max-w-[90rem] sm:px-8 lg:px-20 mx-auto relative ">
+        <Icon
+          onClick={() => swiperRef.current?.swiper.slidePrev(1000)}
+          name="chevronLeft"
+          color="text-white"
+          size={48}
+          aria-label="Go to last slide"
+          className="hidden md:hidden lg:block"
+        />
 
-          <Swiper
-            ref={swiperRef}
-            slidesPerView={1}
-            className="min-h-[50rem] sm:min-h-[44rem] lg:h-[30rem] w-full flex items-center relative -mb-18 sm:mb-0 lg:-my-20"
-            onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-            spaceBetween={250}
-          >
-            {dataToMap.map((item, index) => (
-              <SwiperSlide key={index} className="my-4 sm:my-2">
-                <ClientReviewItem {...item} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+        <Swiper
+          ref={swiperRef}
+          slidesPerView={1}
+          className="min-h-[50rem] sm:min-h-[44rem] lg:h-[30rem] w-full flex items-center relative -mb-18 sm:mb-0 lg:-my-20"
+          onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+          spaceBetween={250}
+        >
+          {dataToMap.map((item, index) => (
+            <SwiperSlide key={index} className="my-4 sm:my-2">
+              <ClientReviewItem {...item} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-          <Icon
-            onClick={() => swiperRef.current?.swiper.slideNext(1000)}
-            name="chevronRight"
-            color="text-secondary"
-            size={48}
-            aria-label="Go to next slide"
-            className="hidden md:hidden lg:block"
-          />
+        <Icon
+          onClick={() => swiperRef.current?.swiper.slideNext(1000)}
+          name="chevronRight"
+          color="text-secondary"
+          size={48}
+          aria-label="Go to next slide"
+          className="hidden md:hidden lg:block"
+        />
 
-          <SliderDots
-            activeIndex={activeIndex}
-            length={dataToMap.length}
-            className="absolute bottom-120 left-4 sm:bottom-145 sm:left-22 lg:bottom-14 lg:left-37 z-50"
-            onDotClick={handleDotClick}
-          />
-        </div>
-      </section>
-    </div>
+        <SliderDots
+          activeIndex={activeIndex}
+          length={dataToMap.length}
+          className="absolute bottom-122 left-4 sm:bottom-150 sm:left-13 lg:bottom-26 lg:left-39 z-50"
+          onDotClick={handleDotClick}
+        />
+      </div>
+    </section>
   );
 }
 

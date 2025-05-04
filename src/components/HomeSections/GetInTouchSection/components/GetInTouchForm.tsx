@@ -59,7 +59,7 @@ export function GetInTouchForm() {
       <Button
         title="Request Demo"
         size="XL"
-        className="w-full sm:w-[16.25rem] bg-[#111729] hover:bg-secondary-light"
+        className="w-[16.25rem] bg-[#111729] hover:bg-secondary-light"
         type="submit"
         aria-label="Button to submit the form"
       />
