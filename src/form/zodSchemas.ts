@@ -1,28 +1,28 @@
 import { z } from "zod";
 
 const email = z
-  .string({ required_error: "Email obrigatório" })
-  .min(1, "Email obrigatório")
-  .email("Email inválido")
+  .string({ required_error: "Email is required" })
+  .min(1, "Email is required")
+  .email("Invalid email")
   .trim()
   .transform((email) => email.toLowerCase());
 
 const message = z
-  .string({ required_error: "Mensagem obrigatória" })
-  .min(10, "Mensagem muito curta. Mínimo de 10 caracteres")
-  .max(500, "Mensagem muito longa. Máximo de 500 caracteres")
+  .string({ required_error: "Message is required" })
+  .min(10, "Message is too short. Minimum of 10 characters")
+  .max(500, "Message is too long. Maximum of 500 characters")
   .trim()
   .transform((message) => message.replace(/\s+/g, " "));
 
 const password = z
-  .string({ required_error: "Senha obrigatória" })
-  .min(8, "Senha deve ter pelo menos 8 caracteres")
-  .max(50, "Senha muito longa");
+  .string({ required_error: "Password is required" })
+  .min(8, "Password must have at least 8 characters")
+  .max(50, "Password is too long");
 
 const name = z
-  .string({ required_error: "Nome obrigatório" })
-  .min(2, "Nome muito curto. Mínimo de 2 caracteres")
-  .max(50, "Nome muito longo. Máximo de 50 caracteres")
+  .string({ required_error: "Name is required" })
+  .min(2, "Name is too short. Minimum of 2 characters")
+  .max(50, "Name is too long. Maximum of 50 characters")
   .trim();
 
 export const zodSchemas = {
