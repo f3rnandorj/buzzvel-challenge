@@ -1,12 +1,14 @@
+"use client";
+
 import { Icon, IconProps, Text } from "@/components";
 import { tailwindUtils } from "@/utils";
 import { ReactNode } from "react";
+import { HTMLMotionProps, motion } from "motion/react";
 
 export type ButtonVariant = "primary" | "outline" | "transparent";
 export type ButtonSize = "M" | "XL";
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends Omit<HTMLMotionProps<"button">, "ref"> {
   title: string;
   textColor?: string;
   isLoading?: boolean;
@@ -58,10 +60,13 @@ export function Button({
     textColor || (variant === "primary" ? "text-background" : "text-secondary");
 
   return (
-    <button
+    <motion.button
       {...buttonProps}
       className={baseClasses}
       disabled={isLoading || buttonProps.disabled}
+      whileTap={{ scale: 0.95 }}
+      whileHover={{ scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 400, damping: 5 }}
     >
       {isLoading ? (
         <Spinner variant={variant} />
@@ -94,7 +99,7 @@ export function Button({
           )}
         </div>
       )}
-    </button>
+    </motion.button>
   );
 }
 

@@ -16,6 +16,7 @@ export function CallToActionLink({ href, text, className }: Props) {
       href={href}
       className={cn(
         "flex group items-center self-start gap-3 hover:text-primary",
+        "animate-scale-pulse",
         className
       )}
     >

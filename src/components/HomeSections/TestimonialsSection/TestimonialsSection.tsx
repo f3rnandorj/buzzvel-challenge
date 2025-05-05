@@ -3,9 +3,9 @@
 import { useRef } from "react";
 import { Icon, Text } from "@/components";
 import { SwiperRef } from "swiper/react";
-
 import "swiper/css";
 import { TestimonialsCarousel } from "./components/TestimonialsCarousel";
+import { AnimatedArrowButton } from "./components/AnimatedArrowButton";
 
 export function TestimonialsSection() {
   const swiperRef = useRef<SwiperRef>(null);
@@ -18,18 +18,23 @@ export function TestimonialsSection() {
         </Text>
 
         <div className="items-center justify-between gap-6 hidden md:flex">
-          <Icon
-            name="arrowLeftCircle"
-            size={48}
-            color="text-primary"
-            onClick={() => swiperRef.current?.swiper.slidePrev(1000)}
-          />
-          <Icon
-            name="arrowRightCircle"
-            size={48}
-            color="text-primary"
-            onClick={() => swiperRef.current?.swiper.slideNext(1000)}
-          />
+          <AnimatedArrowButton position="left">
+            <Icon
+              name="arrowLeftCircle"
+              size={48}
+              color="text-primary"
+              onClick={() => swiperRef.current?.swiper.slidePrev(1000)}
+            />
+          </AnimatedArrowButton>
+
+          <AnimatedArrowButton position="right">
+            <Icon
+              name="arrowRightCircle"
+              size={48}
+              color="text-primary"
+              onClick={() => swiperRef.current?.swiper.slideNext(1000)}
+            />
+          </AnimatedArrowButton>
         </div>
       </div>
 
