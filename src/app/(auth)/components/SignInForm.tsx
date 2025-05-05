@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { SignInFormData, signInFormSchema } from "./signUpSchema";
+import { toast } from "react-toastify";
 
 export function SignInForm() {
   const { control, handleSubmit } = useForm<SignInFormData>({
@@ -14,11 +15,22 @@ export function SignInForm() {
       email: "",
       password: "",
     },
-    delayError: 500,
+    delayError: 1000,
   });
 
   function onSubmit(data: SignInFormData) {
     console.log("Sign In form submitted", data);
+    toast.info(
+      "Sorry but we're currently working to provide this service. Please check back later!",
+      {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      }
+    );
   }
 
   return (

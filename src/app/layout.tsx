@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto_Mono, Roboto, Inter } from "next/font/google";
 import "./globals.css";
+import { ToastContainer } from "react-toastify";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -33,7 +34,10 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} ${robotoMono.variable} ${inter.variable} antialiased`}
       >
-        <div className="h-screen overflow-x-hidden relative">{children}</div>
+        <div className="h-screen overflow-x-hidden relative">
+          {children}
+          <ToastContainer position="top-right" hideProgressBar={false} />
+        </div>
       </body>
     </html>
   );

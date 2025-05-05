@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { GetInTouchFormData, getInTouchFormSchema } from "./getInTouchSchema";
 import { tailwindUtils } from "@/utils";
+import { toast } from "react-toastify";
 
 export function GetInTouchForm() {
   const {
@@ -18,13 +19,24 @@ export function GetInTouchForm() {
       email: "",
       message: "",
     },
-    delayError: 500,
+    delayError: 1000,
   });
 
   const { cn } = tailwindUtils;
 
   function onSubmit(data: GetInTouchFormData) {
     console.log("Form submitted", data);
+    toast.info(
+      "Sorry we're currently working to provide this service. Please check back later!",
+      {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      }
+    );
   }
 
   return (

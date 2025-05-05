@@ -8,10 +8,10 @@ export const signUpFormSchema = z
     name,
     email,
     password,
-    confirmPassword: z.string().min(8, "Confirme a senha"),
+    confirmPassword: z.string().min(8, "Confirm password"),
   })
   .refine((data) => data.password === data.confirmPassword, {
-    message: "Senhas não coincidem",
+    message: "Passwords not match",
     path: ["confirmPassword"],
   });
 
