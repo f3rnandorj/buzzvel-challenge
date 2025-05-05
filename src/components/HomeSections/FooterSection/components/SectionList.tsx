@@ -33,12 +33,12 @@ export function SectionList({
   }
 
   return (
-    <div className="pt-2.5">
-      <Text as="h2" preset="item" className="text-white pb-7">
+    <div className="space-y-6">
+      <Text as="h2" preset="item" className="text-white">
         {title}
       </Text>
 
-      <ul className="space-y-7">{renderItems()}</ul>
+      <ul className="space-y-6">{renderItems()}</ul>
     </div>
   );
 }

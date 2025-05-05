@@ -31,7 +31,7 @@ export function SubHeroSection() {
         </div>
 
         {/* Image with Service Cards */}
-        <div className="relative pt-10 sm:pt-0 overflow-visible -ml-24 sm:mx-0">
+        <div className="relative overflow-visible -ml-24 sm:mx-0">
           <Image
             src={images.subHeroImage}
             alt="Imagem de fundo mostrando um desktop"
