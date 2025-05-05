@@ -7,24 +7,33 @@ import { DropdownNavItemDesktop } from "./components/DropdownNavItemDesktop";
 import { Button } from "../Button/Button";
 import { DrawerMobile } from "./components/DrawerMobile";
 import { Icon } from "../Icon/Icon";
+import Link from "next/link";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex flex-1 w-full h-24 items-center justify-between gap-12 max-w-[90rem] px-4 sm:px-8 lg:px-20 mx-auto mb-6 md:mb-12">
+    <header
+      className="flex flex-1 w-full h-24 items-center justify-between gap-12 max-w-[90rem] px-4 sm:px-8 lg:px-20 mx-auto mb-6 md:mb-12"
+      role="banner"
+    >
       {/* Desktop Nav */}
       <div className="flex items-center gap-12">
-        <Image
-          src="/logo.svg"
-          alt="Logo"
-          width={100}
-          height={40}
-          className="h-10 w-24"
-          priority
-        />
+        <Link href="/" aria-label="Homepage">
+          <Image
+            src="/logo.svg"
+            alt="Uteach Logo"
+            width={100}
+            height={40}
+            className="h-10 w-24"
+            priority
+          />
+        </Link>
 
-        <nav className="hidden md:flex items-center justify-between w-full gap-12">
+        <nav
+          className="hidden md:flex items-center justify-between w-full gap-12"
+          aria-label="Main navigation"
+        >
           <NavItem href="" title="Products" />
           <NavItem href="" title="Solutions" />
           <NavItem href="" title="Pricing" />
@@ -41,19 +50,34 @@ export function Header() {
 
       {/* Signin / SignUp */}
       <div className="hidden md:flex">
-        <Button title="Log In" variant="transparent" />
-        <Button title="Sign Up Now" variant="outline" />
+        <Button
+          title="Log In"
+          variant="transparent"
+          aria-label="Log into your account"
+        />
+        <Button
+          title="Sign Up Now"
+          variant="outline"
+          aria-label="Create a new account"
+        />
       </div>
 
       {/* Mobile Drawer*/}
-      <Icon
-        name="menu"
+      <button
         onClick={() => setIsOpen(true)}
-        size={24}
-        className="md:hidden  text-secondary"
+        className="md:hidden flex items-center"
         aria-label="Open menu"
-      />
+        aria-expanded={isOpen}
+        aria-controls="mobile-menu"
+      >
+        <Icon
+          name="menu"
+          size={24}
+          className="text-secondary"
+          aria-hidden={true}
+        />
+      </button>
       {isOpen && <DrawerMobile setIsOpen={setIsOpen} />}
-    </div>
+    </header>
   );
 }

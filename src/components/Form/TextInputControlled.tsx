@@ -12,8 +12,11 @@ export function TextInputControlled<FormType extends FieldValues>({
   name,
   rules,
   errorMessage,
+  id,
   ...textInputProps
 }: FormTextInputProps<FormType>) {
+  const fieldId = id || `field-${name}`;
+
   return (
     <Controller
       name={name}
@@ -24,7 +27,12 @@ export function TextInputControlled<FormType extends FieldValues>({
           {...textInputProps}
           value={field.value}
           onChange={field.onChange}
+          onBlur={field.onBlur}
+          id={fieldId}
+          name={name}
           errorMessage={fieldState.error?.message || errorMessage}
+          aria-required={rules?.required ? true : undefined}
+          aria-invalid={!!fieldState.error}
         />
       )}
     />

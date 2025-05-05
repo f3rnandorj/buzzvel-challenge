@@ -29,7 +29,7 @@ export function FeaturesSection() {
           <CallToActionLink
             href=""
             text="View all the features"
-            className="pt-3 pb-4 sm:pb-0"
+            className="mt-3 mb-4 sm:mb-0"
           />
         </div>
 

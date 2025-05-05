@@ -80,3 +80,10 @@ button {
 .animate-scale-pulse {
   animation: scale-pulse 2s ease-in-out infinite;
 }
+
+.focus-outline :focus {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 2px;
+  transition: outline 0.2s ease;
+  border-radius: 5px;
+}

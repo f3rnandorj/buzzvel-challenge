@@ -1,5 +1,4 @@
-// CardNumberInput.tsx
-import React from "react";
+import React, { useId } from "react";
 import { Icon, IconProps, Text } from "@/components";
 import { tailwindUtils } from "@/utils";
 
@@ -29,9 +28,20 @@ export function TextInput({
   rightIcon,
   className,
   as = "input",
+  id: propId,
   ...props
 }: TextInputProps) {
   const { cn } = tailwindUtils;
+  const generatedId = useId();
+  const id = propId || `${as}-${generatedId}`;
+  const errorId = `error-${id}`;
+
+  const hasExistingDescription = props["aria-describedby"] !== undefined;
+  const describedBy = errorMessage
+    ? `${errorId}${
+        hasExistingDescription ? ` ${props["aria-describedby"]}` : ""
+      }`
+    : props["aria-describedby"];
 
   const baseClassNameStyles =
     "w-full h-full pl-6 pr-10 py-[1.0625rem] rounded-lg bg-white text-secondary font-inter font-medium text-[0.875rem] placeholder-[#a6a6a6] focus:outline-none";
@@ -54,25 +64,34 @@ export function TextInput({
         {as === "textarea" ? (
           <textarea
             className={cn(baseClassNameStyles, textareaClassNameStyles)}
+            id={id}
+            aria-describedby={describedBy}
             {...(props as React.TextareaHTMLAttributes<HTMLTextAreaElement>)}
           />
         ) : (
           <input
             type="text"
             className={cn(baseClassNameStyles, inputClassNameStyles)}
+            id={id}
+            aria-describedby={describedBy}
             {...(props as React.InputHTMLAttributes<HTMLInputElement>)}
           />
         )}
 
         {rightIcon?.name && (
-          <div className="absolute right-3">
+          <div className="absolute right-3" aria-hidden="true">
             <Icon {...rightIcon} />
           </div>
         )}
       </div>
 
       {errorMessage && (
-        <Text as="span" preset="item" className="mt-2 text-red-950">
+        <Text
+          as="span"
+          preset="item"
+          className="mt-2 text-red-950"
+          role="alert"
+        >
           {errorMessage}
         </Text>
       )}

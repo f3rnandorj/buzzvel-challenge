@@ -67,13 +67,19 @@ export function Button({
       whileTap={{ scale: 0.95 }}
       whileHover={{ scale: 1.02 }}
       transition={{ type: "spring", stiffness: 400, damping: 5 }}
+      aria-busy={isLoading}
+      aria-disabled={isLoading || !!buttonProps.disabled}
     >
       {isLoading ? (
         <Spinner variant={variant} />
       ) : (
         <div className="flex items-center gap-2">
           {leftIcon ? (
-            <Icon {...leftIcon} className={cn(leftIcon.className)} />
+            <Icon
+              {...leftIcon}
+              className={cn(leftIcon.className)}
+              aria-hidden={true}
+            />
           ) : (
             <div />
           )}
@@ -90,6 +96,7 @@ export function Button({
             <Icon
               {...rightIcon}
               className={cn(rightIcon.className, resolvedTextColor)}
+              aria-hidden={true}
             />
           ) : (
             <div />
@@ -115,6 +122,8 @@ function Spinner({ variant = "primary" }: SpinnerProps) {
         spinnerColor
       )}
       data-testid="spinner-testId"
+      role="status"
+      aria-label="Loading"
     />
   );
 }

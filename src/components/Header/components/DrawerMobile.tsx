@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 import { NavItem } from "./NavItem";
 import { Button, Icon } from "@/components";
 
@@ -7,6 +8,30 @@ interface Props {
 }
 
 export function DrawerMobile({ setIsOpen }: Props) {
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    closeButtonRef.current?.focus();
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsOpen(false);
+        return;
+      }
+
+      document.body.style.overflow = "hidden";
+
+      return () => {
+        document.body.style.overflow = "auto";
+      };
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [setIsOpen]);
+
   return (
     <div className="fixed inset-0 z-50 bg-black/30 lg:hidden">
       <div className="fixed top-0 right-0 h-full w-[60%] bg-white shadow-lg p-6 flex flex-col gap-6">
@@ -37,8 +62,16 @@ export function DrawerMobile({ setIsOpen }: Props) {
         </nav>
 
         <div className="mt-auto flex flex-col gap-2">
-          <Button title="Log In" variant="transparent" />
-          <Button title="Sign Up Now" variant="outline" />
+          <Button
+            title="Log In"
+            variant="transparent"
+            aria-label="Log into your account"
+          />
+          <Button
+            title="Sign Up Now"
+            variant="outline"
+            aria-label="Create a new account"
+          />
         </div>
       </div>
     </div>

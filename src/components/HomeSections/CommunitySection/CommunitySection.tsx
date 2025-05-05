@@ -43,7 +43,7 @@ export function CommunitySection() {
           <CallToActionLink
             href=""
             text="Explore teachers and students"
-            className="pt-2 md:pt-4"
+            className="mt-2 md:mt-4"
           />
         </div>
       </div>

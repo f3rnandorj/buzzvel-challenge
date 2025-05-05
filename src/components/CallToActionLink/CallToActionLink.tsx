@@ -6,9 +6,10 @@ interface Props {
   text: string;
   href: string;
   className?: string;
+  ariaLabel?: string;
 }
 
-export function CallToActionLink({ href, text, className }: Props) {
+export function CallToActionLink({ href, text, className, ariaLabel }: Props) {
   const { cn } = tailwindUtils;
 
   return (
@@ -19,6 +20,7 @@ export function CallToActionLink({ href, text, className }: Props) {
         "animate-scale-pulse",
         className
       )}
+      aria-label={ariaLabel || `${text} - click to continue`}
     >
       <Text
         as="span"
@@ -31,6 +33,7 @@ export function CallToActionLink({ href, text, className }: Props) {
       <Icon
         name="arrowRight"
         className="text-secondary-light hover:cursor-pointer group-hover:text-primary"
+        aria-hidden={true}
       />
     </Link>
   );

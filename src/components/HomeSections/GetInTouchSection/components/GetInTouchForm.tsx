@@ -18,7 +18,7 @@ export function GetInTouchForm() {
       email: "",
       message: "",
     },
-    delayError: 1000,
+    delayError: 500,
   });
 
   const { cn } = tailwindUtils;
@@ -30,7 +30,8 @@ export function GetInTouchForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col items-center gap-8 w-full "
+      className="flex flex-col items-center gap-8 w-full"
+      aria-labelledby="contact-form-title"
     >
       <div className="flex flex-col items-center gap-5 w-full">
         <TextInputControlled
@@ -40,6 +41,8 @@ export function GetInTouchForm() {
           className="w-full sm:w-[31.25rem]"
           placeholder="Enter your email"
           alt="Input to type your email"
+          type="email"
+          aria-required="true"
         />
 
         <TextInputControlled
@@ -52,6 +55,7 @@ export function GetInTouchForm() {
             errors.message && "mb-2"
           )}
           placeholder="What are you say ?"
+          aria-required="true"
           aria-label="Input to type your message to us"
         />
       </div>
@@ -61,7 +65,7 @@ export function GetInTouchForm() {
         size="XL"
         className="w-[16.25rem] bg-[#111729] hover:bg-secondary-light"
         type="submit"
-        aria-label="Button to submit the form"
+        aria-label="Submit the contact form to request a demo"
       />
     </form>
   );

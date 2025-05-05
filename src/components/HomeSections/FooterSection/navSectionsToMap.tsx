@@ -23,6 +23,6 @@ export const navSectionsToMap: SectionListProps[] = [
   {
     title: "Company",
     items: ["About", "Press", "Events"],
-    CustomItem: <RequestDemoLink />,
+    CustomItem: <RequestDemoLink href="" />,
   },
 ];

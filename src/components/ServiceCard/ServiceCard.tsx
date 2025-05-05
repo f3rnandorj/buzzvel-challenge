@@ -29,7 +29,10 @@ export function ServiceCard({ text, title, type, onClick }: ServiceCardProps) {
 
   return (
     <div className="flex flex-col w-[10.5rem] sm:w-[13.5rem] h-[14.5rem] shadow-lg bg-white p-4 rounded-lg gap-2">
-      <div className={cn("w-fit px-2 rounded", `${getCardColor()}`)}>
+      <div
+        className={cn("w-fit px-2 rounded", `${getCardColor()}`)}
+        role="status"
+      >
         <Text as="span" preset="itemSmall">
           {type}
         </Text>
@@ -46,9 +49,10 @@ export function ServiceCard({ text, title, type, onClick }: ServiceCardProps) {
       <Button
         title="Take Lesson"
         variant="outline"
-        className=" border-secondary-light"
+        className="border-secondary-light"
         textColor="text-secondary-light"
         onClick={onClick}
+        aria-label={`Take lesson about ${title}`}
       />
     </div>
   );

@@ -1,9 +1,16 @@
 import { Icon, Text } from "@/components";
 import Link from "next/link";
 
-export function RequestDemoLink() {
+interface Props {
+  href: string;
+}
+
+export function RequestDemoLink({ href }: Props) {
   return (
-    <Link href="" className="group">
+    <Link
+      href={href}
+      className="group inline-block focus:outline-none focus:ring-3 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary rounded"
+    >
       <Text
         as="li"
         preset="itemNormal"
