@@ -73,10 +73,7 @@ export function Button({
       ) : (
         <div className="flex items-center gap-2">
           {leftIcon ? (
-            <Icon
-              {...leftIcon}
-              className={cn(leftIcon.className, resolvedTextColor)}
-            />
+            <Icon {...leftIcon} className={cn(leftIcon.className)} />
           ) : (
             <div />
           )}
