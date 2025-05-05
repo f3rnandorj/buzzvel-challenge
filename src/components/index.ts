@@ -10,8 +10,3 @@ export * from "./TextInput/TextInput";
 export * from "./LinkText/LinkText";
 
 export * from "./Form/TextInputControlled";
-
-export * from "./Auth/SignInForm";
-export * from "./Auth/SignUpForm";
-
-export * from "./HomeSections";

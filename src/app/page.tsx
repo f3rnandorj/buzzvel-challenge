@@ -1,16 +1,16 @@
+import { Header } from "@/components";
 import {
   ClientReviewCarouselSection,
   CommunitySection,
   FeaturesSection,
   FooterSection,
   GetInTouchSection,
-  Header,
   HeroSection,
   MetricsSection,
   SignUpSection,
   SubHeroSection,
   TestimonialsSection,
-} from "@/components";
+} from "./components";
 
 export default function Home() {
   return (
