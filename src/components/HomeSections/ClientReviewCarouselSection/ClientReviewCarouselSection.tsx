@@ -8,8 +8,6 @@ import {
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import { useRef, useState } from "react";
 
-import "swiper/css";
-
 export function ClientReviewCarouselSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 

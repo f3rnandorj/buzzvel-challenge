@@ -3,7 +3,6 @@
 import { useRef } from "react";
 import { Icon, Text } from "@/components";
 import { SwiperRef } from "swiper/react";
-import "swiper/css";
 import { TestimonialsCarousel } from "./components/TestimonialsCarousel";
 import { AnimatedArrowButton } from "./components/AnimatedArrowButton";
 

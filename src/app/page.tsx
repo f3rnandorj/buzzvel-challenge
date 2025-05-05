@@ -41,15 +41,15 @@ export default function Home() {
 }
 
 export const metadata = {
-  title: "Uteach - A plataforma para ensinar de forma inteligente",
+  title: "Uteach - The platform for intelligent teaching",
   description:
-    "Conecte-se com alunos, organize seu conteúdo e compartilhe conhecimento com a melhor experiência possível. Descubra como a Uteach pode transformar seu ensino.",
+    "Connect with students, organize your content and share knowledge with the best possible experience. Discover how Uteach can transform your teaching.",
   keywords: [
     "uteach",
-    "educação online",
-    "plataforma de ensino",
-    "professores",
-    "aulas online",
+    "online education",
+    "teaching platform",
+    "teachers",
+    "online classes",
   ],
   authors: [{ name: "Fernando Henrique" }],
 };

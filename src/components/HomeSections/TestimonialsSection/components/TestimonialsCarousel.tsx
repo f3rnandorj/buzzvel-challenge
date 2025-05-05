@@ -2,7 +2,6 @@ import { RefObject } from "react";
 import { images } from "@/assets";
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 
-import "swiper/css";
 import { TestimonialItem, TestimonialItemProps } from "./TestimonialItem";
 import { useGetWindowWidth } from "@/hooks";
 
