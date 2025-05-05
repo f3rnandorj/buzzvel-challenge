@@ -7,10 +7,7 @@ interface Props {
 
 export function RequestDemoLink({ href }: Props) {
   return (
-    <Link
-      href={href}
-      className="group inline-block focus:outline-none focus:ring-3 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary rounded"
-    >
+    <Link href={href} className="group inline-block focus-outline-primary">
       <Text
         as="li"
         preset="itemNormal"

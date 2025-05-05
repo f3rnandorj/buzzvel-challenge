@@ -13,11 +13,7 @@ export function LinkText({ href, text, className, ariaLabel }: Props) {
   const { cn } = tailwindUtils;
 
   return (
-    <Link
-      href={href}
-      aria-label={ariaLabel}
-      className="focus:outline-none focus:ring-3 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary rounded"
-    >
+    <Link href={href} aria-label={ariaLabel} className="focus-outline-primary">
       <Text
         as="span"
         preset="itemNormal"

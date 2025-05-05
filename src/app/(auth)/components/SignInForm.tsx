@@ -55,7 +55,7 @@ export function SignInForm() {
         <Button
           title="Sign In"
           size="XL"
-          className="w-[16.25rem] hover:bg-secondary-light"
+          className="w-[16.25rem] hover:bg-secondary-light focus-outline-primary"
           type="submit"
           aria-label="Submit the sign in form"
         />
@@ -64,7 +64,7 @@ export function SignInForm() {
           {"Don't have an account? "}
           <Link
             href="/signup"
-            className="text-primary hover:underline focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-100 focus:ring-offset-2 focus:ring-offset-secondary rounded-md"
+            className="text-primary hover:underline focus-outline-primary"
           >
             Sign Up
           </Link>

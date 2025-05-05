@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Text, Button } from "@/components";
 
 export default function NotFound() {
@@ -20,13 +19,13 @@ export default function NotFound() {
           </Text>
 
           <div className="mt-8">
-            <Link href="/" tabIndex={-1}>
-              <Button
-                title="Back to Home"
-                size="XL"
-                aria-label="Navigate back to homepage"
-              />
-            </Link>
+            <Button
+              href="/"
+              tabIndex={-1}
+              title="Back to Home"
+              size="XL"
+              aria-label="Navigate back to homepage"
+            />
           </div>
         </div>
       </main>

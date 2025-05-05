@@ -45,15 +45,31 @@ ol {
   list-style: none;
 }
 
+a,
 input,
 button,
 textarea,
 select {
   font: inherit;
+  cursor: pointer;
 }
 
-button {
-  cursor: pointer;
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 2px;
+  transition: outline 0.2s ease;
+  border-radius: 5px;
+}
+
+.focus-outline-primary:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+  transition: outline 0.2s ease;
+  border-radius: 5px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -79,11 +95,4 @@ button {
 
 .animate-scale-pulse {
   animation: scale-pulse 2s ease-in-out infinite;
-}
-
-.focus-outline :focus {
-  outline: 3px solid var(--color-secondary);
-  outline-offset: 2px;
-  transition: outline 0.2s ease;
-  border-radius: 5px;
 }

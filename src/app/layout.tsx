@@ -33,9 +33,7 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} ${robotoMono.variable} ${inter.variable} antialiased`}
       >
-        <div className="h-screen overflow-x-hidden relative focus-outline">
-          {children}
-        </div>
+        <div className="h-screen overflow-x-hidden relative">{children}</div>
       </body>
     </html>
   );

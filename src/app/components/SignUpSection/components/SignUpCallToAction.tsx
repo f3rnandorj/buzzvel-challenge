@@ -1,5 +1,4 @@
 import { Button, Text } from "@/components";
-import Link from "next/link";
 
 export function SignUpCallToAction() {
   return (
@@ -13,14 +12,13 @@ export function SignUpCallToAction() {
         elit et fringilla habitant ut facilisi.
       </Text>
 
-      <Link href="/signup">
-        <Button
-          title="Sign Up Now"
-          className="w-[15rem]"
-          size="XL"
-          aria-label="Button to sign up"
-        />
-      </Link>
+      <Button
+        href="/signup"
+        title="Sign Up Now"
+        className="w-[15rem]"
+        size="XL"
+        aria-label="Button to sign up"
+      />
     </div>
   );
 }

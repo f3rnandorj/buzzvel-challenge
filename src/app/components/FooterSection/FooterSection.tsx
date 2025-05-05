@@ -21,7 +21,7 @@ export function FooterSection() {
           <Link
             href="/"
             aria-label="Go to homepage"
-            className="focus:outline-none focus:ring-3 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary rounded-md"
+            className="focus-outline-primary"
           >
             <Image
               src="/logoWhite.svg"

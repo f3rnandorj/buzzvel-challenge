@@ -7,10 +7,7 @@ export default function SignInPage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-secondary p-6">
       <div className="flex flex-col items-center gap-10 max-w-lg w-full">
-        <Link
-          href="/"
-          className="focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-100 focus:ring-offset-2 focus:ring-offset-secondary rounded"
-        >
+        <Link href="/" className="focus-outline-primary">
           <Image
             src="/logoWhite.svg"
             alt="Uteach Logo"
