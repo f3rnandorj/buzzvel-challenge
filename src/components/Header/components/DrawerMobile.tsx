@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { NavItem } from "./NavItem";
 import { Button, Icon } from "@/components";
+import Link from "next/link";
 
 interface Props {
   setIsOpen: (isOpen: boolean) => void;
@@ -62,16 +63,22 @@ export function DrawerMobile({ setIsOpen }: Props) {
         </nav>
 
         <div className="mt-auto flex flex-col gap-2">
-          <Button
-            title="Log In"
-            variant="transparent"
-            aria-label="Log into your account"
-          />
-          <Button
-            title="Sign Up Now"
-            variant="outline"
-            aria-label="Create a new account"
-          />
+          <Link href="/signin" onClick={() => setIsOpen(false)}>
+            <Button
+              title="Log In"
+              variant="transparent"
+              aria-label="Log into your account"
+              className="w-full"
+            />
+          </Link>
+          <Link href="/signup" onClick={() => setIsOpen(false)}>
+            <Button
+              title="Sign Up Now"
+              variant="outline"
+              aria-label="Create a new account"
+              className="w-full"
+            />
+          </Link>
         </div>
       </div>
     </div>

@@ -5,6 +5,7 @@ import { tailwindUtils } from "@/utils";
 type BaseTextInputProps = {
   label?: string;
   errorMessage?: string;
+  errorMessageColor?: string;
   rightIcon?: IconProps;
 };
 
@@ -27,6 +28,7 @@ export function TextInput({
   errorMessage,
   rightIcon,
   className,
+  errorMessageColor = "text-red-400",
   as = "input",
   id: propId,
   ...props
@@ -89,7 +91,7 @@ export function TextInput({
         <Text
           as="span"
           preset="item"
-          className="mt-2 text-red-950"
+          className={cn("mt-2", errorMessageColor)}
           role="alert"
         >
           {errorMessage}

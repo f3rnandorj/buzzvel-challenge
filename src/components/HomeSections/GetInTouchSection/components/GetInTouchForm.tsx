@@ -43,6 +43,7 @@ export function GetInTouchForm() {
           alt="Input to type your email"
           type="email"
           aria-required="true"
+          errorMessageColor="text-red-950"
         />
 
         <TextInputControlled
@@ -57,6 +58,7 @@ export function GetInTouchForm() {
           placeholder="What are you say ?"
           aria-required="true"
           aria-label="Input to type your message to us"
+          errorMessageColor="text-red-950"
         />
       </div>
 

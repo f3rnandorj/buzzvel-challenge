@@ -50,16 +50,20 @@ export function Header() {
 
       {/* Signin / SignUp */}
       <div className="hidden md:flex">
-        <Button
-          title="Log In"
-          variant="transparent"
-          aria-label="Log into your account"
-        />
-        <Button
-          title="Sign Up Now"
-          variant="outline"
-          aria-label="Create a new account"
-        />
+        <Link href="/signin">
+          <Button
+            title="Log In"
+            variant="transparent"
+            aria-label="Log into your account"
+          />
+        </Link>
+        <Link href="/signup">
+          <Button
+            title="Sign Up Now"
+            variant="outline"
+            aria-label="Create a new account"
+          />
+        </Link>
       </div>
 
       {/* Mobile Drawer*/}

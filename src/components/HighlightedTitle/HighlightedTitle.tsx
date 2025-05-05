@@ -8,6 +8,7 @@ interface Props {
   afterText?: string;
   className?: string;
   containerClassName?: string;
+  textColor?: string;
 }
 
 export function HighlightedTitle({
@@ -16,6 +17,7 @@ export function HighlightedTitle({
   prevText,
   afterText,
   className,
+  textColor,
   containerClassName,
 }: Props) {
   const { cn } = tailwindUtils;
@@ -34,7 +36,11 @@ export function HighlightedTitle({
   return (
     <div className={containerClassName}>
       {prevText && (
-        <Text as="span" className="align-middle" preset={textPreset}>
+        <Text
+          as="span"
+          className={cn("align-middle", textColor)}
+          preset={textPreset}
+        >
           {prevText}
         </Text>
       )}
@@ -55,13 +61,21 @@ export function HighlightedTitle({
           />
         </svg>
 
-        <Text as="span" className="relative z-10 " preset={textPreset}>
+        <Text
+          as="span"
+          className={cn("relative z-10", textColor)}
+          preset={textPreset}
+        >
           {text}
         </Text>
       </div>
 
       {afterText && (
-        <Text as="span" className="align-middle" preset={textPreset}>
+        <Text
+          as="span"
+          className={cn("align-middle", textColor)}
+          preset={textPreset}
+        >
           {renderTextWithLineBreaks(afterText)}
         </Text>
       )}

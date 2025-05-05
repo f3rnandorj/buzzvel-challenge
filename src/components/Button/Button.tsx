@@ -121,7 +121,6 @@ function Spinner({ variant = "primary" }: SpinnerProps) {
         "w-5 h-5 border-2 border-t-transparent rounded-full animate-spin",
         spinnerColor
       )}
-      data-testid="spinner-testId"
       role="status"
       aria-label="Loading"
     />

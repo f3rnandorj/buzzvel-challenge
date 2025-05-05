@@ -2,6 +2,7 @@ import { Button, HighlightedTitle, Icon, Text } from "@/components";
 import { images } from "@/assets";
 import Image from "next/image";
 import { HeroSectionParagraph } from "./components/HeroSectionParagraph";
+import Link from "next/link";
 
 export function HeroSection() {
   return (
@@ -17,11 +18,13 @@ export function HeroSection() {
           <HeroSectionParagraph />
 
           <div className="flex lg:pb-12">
-            <Button
-              title="Sign Up Now"
-              size="XL"
-              className="flex flex-1 lg:block lg:flex-none"
-            />
+            <Link href="/signup">
+              <Button
+                title="Sign Up Now"
+                size="XL"
+                className="flex flex-1 lg:block lg:flex-none"
+              />
+            </Link>
             <Button
               leftIcon={{ name: "playCircle", color: "secondary-light" }}
               title="View Demo"
