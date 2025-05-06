@@ -1,16 +1,28 @@
-![GitHub License](https://img.shields.io/github/license/f3rnandorj/buzzvel-challenge?style=plastic&logo=Utech&logoColor=%23ea580c&label=Fernando%20H&color=blue)
+![GitHub License](https://img.shields.io/github/license/f3rnandorj/buzzvel-challenge?style=flat&logo=Utech&logoColor=%23ea580c&label=Fernando%20H&color=blue)
 ![Static Badge](https://img.shields.io/badge/Buzzvel-Utech-%23ea580c?link=https%3A%2F%2Fbuzzvel.com%2F)
 
+> **Note:** This documentation is available in [English](#buzzvel-challenge) and [Português](#desafio-buzzvel-português). (Desca a tela para ter acesso a versão em português)
 
-# Buzzvel Challenge
+Deploy: ""
+
+# Buzzvel Challenge 🇺🇸
 
 ## About the Project
 
-This is a responsive landing page built as part of the Buzzvel Frontend Challenge. The project aims to demonstrate modern web development techniques, responsive design principles, and best practices in React and Next.js development.
+Responsive landing page developed for the Buzzvel Frontend Challenge, showcasing modern web technologies and design best practices. The project aims to demonstrate modern web development techniques, responsive design principles, and best practices in React and Next.js development.
 
 The project includes a fully responsive landing page with multiple sections, authentication forms, and interactive components designed according to the provided Figma designs.
 
+![image](https://github.com/user-attachments/assets/c434bfc5-6d82-4d54-8536-8b6a04fb07ee)
+
 ## Overview of Technologies Used
+
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)](https://reactjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=flat&logo=eslint&logoColor=white)](https://eslint.org/)
+[![Zod](https://img.shields.io/badge/Zod-3068B7?style=flat&logo=zod&logoColor=white)](https://zod.dev/)
 
 - **Next.js 14**: React framework with App Router for server and client components
 - **React 18**: JavaScript library for building user interfaces
@@ -86,6 +98,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - **Accessibility**: Focus states and semantic HTML for better accessibility
 - **Animations**: Subtle animations for improved user experience
 - **Type Safety**: Full TypeScript implementation for robust code
+- **SEO Optimization**: Proper metadata, semantic HTML structure, and performance optimization for better search engine rankings
 
 ## Figma Design
 
@@ -109,17 +122,30 @@ The favicon for this project was generated using [RealFaviconGenerator](https://
 3. Test the responsiveness by resizing your browser window
 4. Interact with the carousel components in the testimonials section
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
 ---
 
-# Desafio Buzzvel (Português)
+# Desafio Buzzvel (Português) 🇧🇷
 
 ## Sobre o Projeto
 
-Esta é uma landing page responsiva construída como parte do Desafio Frontend da Buzzvel. O projeto tem como objetivo demonstrar técnicas modernas de desenvolvimento web, princípios de design responsivo e melhores práticas no desenvolvimento com React e Next.js.
+Página de destino responsiva desenvolvida para o Buzzvel Frontend Challenge, apresentando tecnologias web modernas e melhores práticas de design. O projeto tem como objetivo demonstrar técnicas modernas de desenvolvimento web, princípios de design responsivo e melhores práticas no desenvolvimento com React e Next.js.
 
 O projeto inclui uma landing page totalmente responsiva com múltiplas seções, formulários de autenticação e componentes interativos projetados de acordo com os designs fornecidos no Figma.
 
+![image](https://github.com/user-attachments/assets/4bd435cb-f159-45b2-8467-805308041169)
+
 ## Visão Geral das Tecnologias Utilizadas
+
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)](https://reactjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=flat&logo=eslint&logoColor=white)](https://eslint.org/)
+[![Zod](https://img.shields.io/badge/Zod-3068B7?style=flat&logo=zod&logoColor=white)](https://zod.dev/)
 
 - **Next.js 14**: Framework React com App Router para componentes servidor e cliente
 - **React 18**: Biblioteca JavaScript para construção de interfaces de usuário
@@ -195,6 +221,7 @@ Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver o 
 - **Acessibilidade**: Estados de foco e HTML semântico para melhor acessibilidade
 - **Animações**: Animações sutis para melhorar a experiência do usuário
 - **Segurança de Tipos**: Implementação completa de TypeScript para código robusto
+- **Otimização para SEO**: Metadados adequados, estrutura HTML semântica e otimização de desempenho para melhor posicionamento nos mecanismos de busca
 
 ## Design no Figma
 
@@ -217,3 +244,7 @@ O favicon deste projeto foi gerado usando [RealFaviconGenerator](https://realfav
 2. Clique em "Entrar" ou "Cadastrar" para ver os formulários de autenticação
 3. Teste a responsividade redimensionando a janela do seu navegador
 4. Interaja com os componentes de carrossel na seção de depoimentos
+
+## Licensa
+
+Este projeto está licenciado sob a Licença MIT - veja o arquivo de [LICENSE](./LICENSE) para detalhes.
