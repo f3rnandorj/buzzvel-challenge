@@ -3,7 +3,7 @@
 
 > **Note:** This documentation is available in [English](#buzzvel-challenge) and [Português](#desafio-buzzvel-português). (Desca a tela para ter acesso a versão em português)
 
-Deploy: ""
+Deploy: https://buzzvel-challenge-omega.vercel.app/
 
 # Buzzvel Challenge 🇺🇸
 
