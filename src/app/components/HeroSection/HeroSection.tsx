@@ -60,6 +60,7 @@ export function HeroSection() {
             alt="Image of an exchange of messages between teacher and student"
             width={625}
             height={545}
+            priority={true}
           />
         </div>
       </div>
