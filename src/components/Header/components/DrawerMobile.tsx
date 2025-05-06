@@ -34,7 +34,7 @@ export function DrawerMobile({ setIsOpen }: Props) {
 
   return (
     <div className="fixed inset-0 z-50 bg-black/30 lg:hidden">
-      <div className="fixed top-0 right-0 h-full w-[60%] bg-white shadow-lg p-6 flex flex-col gap-6">
+      <div className="fixed top-0 right-0 h-full w-[55%] bg-white shadow-lg p-6 flex flex-col gap-6">
         <div className="flex justify-between items-center">
           <Image
             src="/logo.svg"
@@ -56,7 +56,10 @@ export function DrawerMobile({ setIsOpen }: Props) {
           <NavItem elementIdToSwipe="products" title="Products" />
           <NavItem elementIdToSwipe="solutions" title="Solutions" />
           <NavItem elementIdToSwipe="pricing" title="Pricing" />
-          <NavItem elementIdToSwipe="/docs" title="Documentation" />
+          <NavItem
+            href="https://github.com/f3rnandorj/buzzvel-challenge/blob/main/README.md"
+            title="Documentation"
+          />
           <NavItem elementIdToSwipe="contact-us" title="Contact us" />
         </nav>
 

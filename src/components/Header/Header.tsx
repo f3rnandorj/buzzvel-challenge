@@ -41,7 +41,10 @@ export function Header() {
           <DropdownNavItemDesktop
             title="Resources"
             items={[
-              { elementIdToSwipe: "/docs", title: "Documentation" },
+              {
+                href: "https://github.com/f3rnandorj/buzzvel-challenge/blob/main/README.md",
+                title: "Documentation",
+              },
               { elementIdToSwipe: "contact-us", title: "Contact us" },
             ]}
           />

@@ -3,9 +3,15 @@
 import { useEffect, useRef, useState, KeyboardEvent, useCallback } from "react";
 import { Text, Icon } from "@/components";
 
+interface ItemProps {
+  title: string;
+  elementIdToSwipe?: string;
+  href?: string;
+}
+
 interface Props {
   title: string;
-  items: { elementIdToSwipe: string; title: string }[];
+  items: ItemProps[];
 }
 
 export function DropdownNavItemDesktop({ title, items }: Props) {
@@ -20,17 +26,38 @@ export function DropdownNavItemDesktop({ title, items }: Props) {
     .toLowerCase()
     .replace(/\s+/g, "-")}`;
 
-  function scrollToComponent(elementIdToSwipe: string) {
-    const blockPositionScroll: ScrollIntoViewOptions["block"] =
-      elementIdToSwipe === "contact-us" ? "start" : "center";
+  const setMenuItemRef = useCallback(
+    (el: HTMLButtonElement | null, index: number) => {
+      if (el) {
+        menuItemsRef.current[index] = el;
+      }
+    },
+    []
+  );
 
-    const element = document.getElementById(elementIdToSwipe);
+  function scrollToComponent({
+    elementIdToSwipe,
+    href,
+  }: Pick<ItemProps, "elementIdToSwipe" | "href">) {
+    if (!elementIdToSwipe && !href) return;
 
-    element?.scrollIntoView({
-      behavior: "smooth",
-      block: blockPositionScroll,
-      inline: "end",
-    });
+    if (href) {
+      window.open(href, "_blank");
+      return;
+    }
+
+    if (elementIdToSwipe) {
+      const blockPositionScroll: ScrollIntoViewOptions["block"] =
+        elementIdToSwipe === "contact-us" ? "start" : "center";
+
+      const element = document.getElementById(elementIdToSwipe);
+
+      element?.scrollIntoView({
+        behavior: "smooth",
+        block: blockPositionScroll,
+        inline: "end",
+      });
+    }
   }
 
   function handleButtonKeyDown(e: KeyboardEvent<HTMLButtonElement>) {
@@ -124,15 +151,6 @@ export function DropdownNavItemDesktop({ title, items }: Props) {
     }
   }, [isOpen]);
 
-  const setMenuItemRef = useCallback(
-    (el: HTMLButtonElement | null, index: number) => {
-      if (el) {
-        menuItemsRef.current[index] = el;
-      }
-    },
-    []
-  );
-
   return (
     <div className="relative" ref={dropdownRef}>
       <button
@@ -168,7 +186,10 @@ export function DropdownNavItemDesktop({ title, items }: Props) {
               key={item.elementIdToSwipe}
               className="block w-full px-4 py-2 text-sm hover:bg-gray-50"
               onClick={() => {
-                scrollToComponent(item.elementIdToSwipe);
+                scrollToComponent({
+                  elementIdToSwipe: item?.elementIdToSwipe,
+                  href: item?.href,
+                });
                 setIsOpen(false);
               }}
               role="menuitem"

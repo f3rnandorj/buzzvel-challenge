@@ -1,20 +1,34 @@
 import { Text } from "@/components";
 
 interface Props {
-  elementIdToSwipe: string;
   title: string;
   ariaLabel?: string;
+  elementIdToSwipe?: string;
+  href?: string;
 }
 
-export function NavItem({ elementIdToSwipe, title, ariaLabel }: Props) {
+export function NavItem({ href, elementIdToSwipe, title, ariaLabel }: Props) {
   function scrollToComponent() {
-    const element = document.getElementById(elementIdToSwipe);
+    if (!elementIdToSwipe && !href) return;
 
-    element?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "end",
-    });
+    if (href) {
+      console.log("chegou", href);
+      window.open(href, "_blank");
+      return;
+    }
+
+    if (elementIdToSwipe) {
+      const blockPositionScroll: ScrollIntoViewOptions["block"] =
+        elementIdToSwipe === "contact-us" ? "start" : "center";
+
+      const element = document.getElementById(elementIdToSwipe);
+
+      element?.scrollIntoView({
+        behavior: "smooth",
+        block: blockPositionScroll,
+        inline: "end",
+      });
+    }
   }
 
   return (
