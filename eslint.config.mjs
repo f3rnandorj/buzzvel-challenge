@@ -12,10 +12,7 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.config({
     extends: [
-      "next/core-web-vitals",
-      "next/typescript",
-      "prettier",
-    ],
+      "next/core-web-vitals", "next/typescript", "prettier", "plugin:testing-library/react", "plugin:jest-dom/recommended"],
     rules: {
       semi: ["error"],
       quotes: ["error", "double"],
@@ -27,10 +24,10 @@ const eslintConfig = [
       "@typescript-eslint/no-unused-vars": [
         "error",
         {
-          argsIgnorePattern: "^_",
-          ignoreRestSiblings: true,
-        },
-      ],
+          "argsIgnorePattern": "^_",
+          "ignoreRestSiblings": true
+        }
+      ]
     },
   }),
 ];
