@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import { NavItem } from "./NavItem";
-import { Button, Icon } from "@/components";
+import { HeaderNavItem, HeaderNavItemProps } from "./HeaderNavItem";
+import { Button, Icon, ScrollToComponentProps } from "@/components";
 
 interface Props {
   setIsOpen: (isOpen: boolean) => void;
@@ -52,15 +52,10 @@ export function DrawerMobile({ setIsOpen }: Props) {
           />
         </div>
 
-        <nav className="flex flex-col gap-4 mt-8">
-          <NavItem elementIdToSwipe="products" title="Products" />
-          <NavItem elementIdToSwipe="solutions" title="Solutions" />
-          <NavItem elementIdToSwipe="pricing" title="Pricing" />
-          <NavItem
-            href="https://github.com/f3rnandorj/buzzvel-challenge/blob/main/README.md"
-            title="Documentation"
-          />
-          <NavItem elementIdToSwipe="contact-us" title="Contact us" />
+        <nav className="flex flex-col gap-4 mt-8" role="menu">
+          {navItemsToMap.map((item) => (
+            <HeaderNavItem key={item.title} {...item} />
+          ))}
         </nav>
 
         <div className="mt-auto flex flex-col gap-2">
@@ -85,3 +80,51 @@ export function DrawerMobile({ setIsOpen }: Props) {
     </div>
   );
 }
+
+function scrollToComponent({ elementIdToSwipe, href }: ScrollToComponentProps) {
+  if (!elementIdToSwipe && !href) return;
+
+  if (href) {
+    window.open(href, "_blank");
+    return;
+  }
+
+  if (elementIdToSwipe) {
+    const blockPositionScroll: ScrollIntoViewOptions["block"] =
+      elementIdToSwipe === "contact-us" ? "start" : "center";
+
+    const element = document.getElementById(elementIdToSwipe);
+
+    element?.scrollIntoView({
+      behavior: "smooth",
+      block: blockPositionScroll,
+      inline: "end",
+    });
+  }
+}
+
+const navItemsToMap: HeaderNavItemProps[] = [
+  {
+    title: "Products",
+    onClick: () => scrollToComponent({ elementIdToSwipe: "products" }),
+  },
+  {
+    title: "Solutions",
+    onClick: () => scrollToComponent({ elementIdToSwipe: "solutions" }),
+  },
+  {
+    title: "Pricing",
+    onClick: () => scrollToComponent({ elementIdToSwipe: "pricing" }),
+  },
+  {
+    title: "Documentation",
+    onClick: () =>
+      scrollToComponent({
+        href: "https://github.com/f3rnandorj/buzzvel-challenge/blob/main/README.md",
+      }),
+  },
+  {
+    title: "Contact us",
+    onClick: () => scrollToComponent({ elementIdToSwipe: "contact-us" }),
+  },
+];

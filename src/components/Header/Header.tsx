@@ -2,12 +2,17 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { NavItem } from "./components/NavItem";
+import { HeaderNavItem, HeaderNavItemProps } from "./components/HeaderNavItem";
 import { DropdownNavItemDesktop } from "./components/DropdownNavItemDesktop";
 import { Button } from "../Button/Button";
 import { DrawerMobile } from "./components/DrawerMobile";
 import { Icon } from "../Icon/Icon";
 import Link from "next/link";
+
+export interface ScrollToComponentProps {
+  elementIdToSwipe?: string;
+  href?: string;
+}
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,19 +38,26 @@ export function Header() {
         <nav
           className="hidden md:flex items-center justify-between w-full gap-12"
           aria-label="Main navigation"
+          role="menu"
         >
-          <NavItem elementIdToSwipe="products" title="Products" />
-          <NavItem elementIdToSwipe="solutions" title="Solutions" />
-          <NavItem elementIdToSwipe="pricing" title="Pricing" />
-          {/* TODO: Add a link to the Documentation when it's ready */}
+          {navItemsToMap.map((item) => (
+            <HeaderNavItem key={item.title} {...item} />
+          ))}
           <DropdownNavItemDesktop
             title="Resources"
             items={[
               {
-                href: "https://github.com/f3rnandorj/buzzvel-challenge/blob/main/README.md",
                 title: "Documentation",
+                onClick: () =>
+                  scrollToComponent({
+                    href: "https://github.com/f3rnandorj/buzzvel-challenge/blob/main/README.md",
+                  }),
               },
-              { elementIdToSwipe: "contact-us", title: "Contact us" },
+              {
+                title: "Contact us",
+                onClick: () =>
+                  scrollToComponent({ elementIdToSwipe: "contact-us" }),
+              },
             ]}
           />
         </nav>
@@ -86,3 +98,40 @@ export function Header() {
     </header>
   );
 }
+
+function scrollToComponent({ elementIdToSwipe, href }: ScrollToComponentProps) {
+  if (!elementIdToSwipe && !href) return;
+
+  if (href) {
+    window.open(href, "_blank");
+    return;
+  }
+
+  if (elementIdToSwipe) {
+    const blockPositionScroll: ScrollIntoViewOptions["block"] =
+      elementIdToSwipe === "contact-us" ? "start" : "center";
+
+    const element = document.getElementById(elementIdToSwipe);
+
+    element?.scrollIntoView({
+      behavior: "smooth",
+      block: blockPositionScroll,
+      inline: "end",
+    });
+  }
+}
+
+const navItemsToMap: HeaderNavItemProps[] = [
+  {
+    title: "Products",
+    onClick: () => scrollToComponent({ elementIdToSwipe: "products" }),
+  },
+  {
+    title: "Solutions",
+    onClick: () => scrollToComponent({ elementIdToSwipe: "solutions" }),
+  },
+  {
+    title: "Pricing",
+    onClick: () => scrollToComponent({ elementIdToSwipe: "pricing" }),
+  },
+];

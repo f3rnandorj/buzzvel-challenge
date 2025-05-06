@@ -23,10 +23,16 @@ export function SectionList({
       listItems.splice(
         CustomItemPosition,
         0,
-        <div key="custom-item">{CustomItem}</div>
+        <li key="custom-item" className="text-gray-200">
+          {CustomItem}
+        </li>
       );
     } else if (CustomItem) {
-      listItems.push(<div key="custom-item">{CustomItem}</div>);
+      listItems.push(
+        <li key="custom-item" className="text-gray-200">
+          {CustomItem}
+        </li>
+      );
     }
 
     return listItems;
@@ -38,7 +44,9 @@ export function SectionList({
         {title}
       </Text>
 
-      <ul className="space-y-6">{renderItems()}</ul>
+      <ul className="space-y-6" role="list">
+        {renderItems()}
+      </ul>
     </div>
   );
 }

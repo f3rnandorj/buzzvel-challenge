@@ -22,14 +22,20 @@ export function ClientReviewCarouselSection() {
   }
 
   return (
-    <section className="w-full bg-[#f3ce49] my-6 md:my-20">
+    <section
+      className="w-full bg-[#f3ce49] my-6 md:my-20"
+      aria-labelledby="client-review-title"
+    >
+      <h2 id="client-review-title" className="sr-only">
+        Client Reviews
+      </h2>
       <div className="flex items-center gap-4 max-w-[90rem] sm:px-8 lg:px-20 mx-auto relative ">
         <Icon
           onClick={() => swiperRef.current?.swiper.slidePrev(1000)}
           name="chevronLeft"
           color="text-white"
           size={48}
-          aria-label="Go to last slide"
+          aria-label="Previous slide"
           className="hidden md:hidden lg:block"
         />
 
@@ -39,9 +45,15 @@ export function ClientReviewCarouselSection() {
           className="min-h-[50rem] sm:min-h-[44rem] lg:h-[30rem] w-full flex items-center relative -mb-18 sm:mb-0 lg:-my-20"
           onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
           spaceBetween={250}
+          aria-live="polite"
         >
           {dataToMap.map((item, index) => (
-            <SwiperSlide key={index} className="my-4 sm:my-2">
+            <SwiperSlide
+              key={index}
+              className="my-4 sm:my-2"
+              aria-roledescription="slide"
+              aria-label={`${index + 1} of ${dataToMap.length}`}
+            >
               <ClientReviewItem {...item} />
             </SwiperSlide>
           ))}
@@ -52,7 +64,7 @@ export function ClientReviewCarouselSection() {
           name="chevronRight"
           color="text-secondary"
           size={48}
-          aria-label="Go to next slide"
+          aria-label="Next slide"
           className="hidden md:hidden lg:block"
         />
 
@@ -61,6 +73,7 @@ export function ClientReviewCarouselSection() {
           length={dataToMap.length}
           className="absolute bottom-122 left-4 sm:bottom-150 sm:left-13 lg:bottom-26 lg:left-39 z-50"
           onDotClick={handleDotClick}
+          ariaLabel="Client review slides"
         />
       </div>
     </section>

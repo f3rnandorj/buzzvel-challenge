@@ -3,7 +3,7 @@ import { Text } from "@/components";
 export function BetaItem({ text }: { text: string }) {
   return (
     <Text
-      as="li"
+      as="span"
       preset="itemNormal"
       className="flex items-center gap-1 text-white"
     >

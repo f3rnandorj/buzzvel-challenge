@@ -17,12 +17,12 @@ export function FooterSection({ id }: Props) {
   return (
     <footer
       id={id}
-      className="w-full bg-secondary py-12 md:py-22"
+      className="w-full bg-secondary pt-12 md:pt-22"
       role="contentinfo"
       aria-label="Site footer"
     >
       <div className="max-w-[90rem] mx-auto px-4 sm:px-8 lg:px-20 items-center">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-11 sm:gap-8 text-sm">
+        <menu className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-11 sm:gap-8 text-sm">
           <Link
             href="/"
             aria-label="Go to homepage"
@@ -41,7 +41,7 @@ export function FooterSection({ id }: Props) {
           {navSectionsToMap.map((section) => (
             <SectionList key={section.title} {...section} />
           ))}
-        </div>
+        </menu>
 
         <hr
           className="border-gray-700 w-full mt-12 sm:mt-9"

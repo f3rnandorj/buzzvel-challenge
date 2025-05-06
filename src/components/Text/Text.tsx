@@ -19,6 +19,7 @@ export interface TextProps extends HTMLAttributes<HTMLElement> {
   preset?: TextVariants;
   children: ReactNode;
   className?: string;
+  htmlFor?: string;
 }
 
 export function Text({

@@ -55,6 +55,7 @@ export function TextInput({
       {label && (
         <Text
           as="label"
+          htmlFor={id}
           preset="interParagraphNormal"
           className="pb-5 text-white"
         >

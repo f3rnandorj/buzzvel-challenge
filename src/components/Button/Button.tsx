@@ -32,7 +32,7 @@ export type AProps = {
   ButtonCommon;
 
 const variantClassesStyles: Record<ButtonVariant, string> = {
-  primary: "bg-primary text-background hover:bg-secondary",
+  primary: "bg-primary text-white hover:bg-[#bc2e00]",
   outline:
     "bg-background text-secondary border-[3px] border-secondary hover:bg-gray-200",
   transparent: "text-secondary bg-transparent hover:bg-gray-100",

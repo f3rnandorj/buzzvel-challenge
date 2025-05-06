@@ -5,8 +5,7 @@ import { Text, Icon } from "@/components";
 
 interface ItemProps {
   title: string;
-  elementIdToSwipe?: string;
-  href?: string;
+  onClick: () => void;
 }
 
 interface Props {
@@ -34,31 +33,6 @@ export function DropdownNavItemDesktop({ title, items }: Props) {
     },
     []
   );
-
-  function scrollToComponent({
-    elementIdToSwipe,
-    href,
-  }: Pick<ItemProps, "elementIdToSwipe" | "href">) {
-    if (!elementIdToSwipe && !href) return;
-
-    if (href) {
-      window.open(href, "_blank");
-      return;
-    }
-
-    if (elementIdToSwipe) {
-      const blockPositionScroll: ScrollIntoViewOptions["block"] =
-        elementIdToSwipe === "contact-us" ? "start" : "center";
-
-      const element = document.getElementById(elementIdToSwipe);
-
-      element?.scrollIntoView({
-        behavior: "smooth",
-        block: blockPositionScroll,
-        inline: "end",
-      });
-    }
-  }
 
   function handleButtonKeyDown(e: KeyboardEvent<HTMLButtonElement>) {
     switch (e.key) {
@@ -183,15 +157,9 @@ export function DropdownNavItemDesktop({ title, items }: Props) {
           {items.map((item, index) => (
             <button
               ref={(el) => setMenuItemRef(el, index)}
-              key={item.elementIdToSwipe}
+              key={item.title}
               className="block w-full px-4 py-2 text-sm hover:bg-gray-50"
-              onClick={() => {
-                scrollToComponent({
-                  elementIdToSwipe: item?.elementIdToSwipe,
-                  href: item?.href,
-                });
-                setIsOpen(false);
-              }}
+              onClick={item.onClick}
               role="menuitem"
               tabIndex={isOpen ? 0 : -1}
               onKeyDown={(e) => handleMenuItemKeyDown(e, index)}

@@ -9,7 +9,7 @@ export function RequestDemoLink({ href }: Props) {
   return (
     <Link href={href} className="group inline-block focus-outline-primary">
       <Text
-        as="li"
+        as="span"
         preset="itemNormal"
         className="flex items-center gap-1 text-gray-200 group-hover:text-primary"
       >

@@ -20,7 +20,7 @@ export function SliderDots({
   return (
     <div
       className={cn("flex items-center gap-2", className)}
-      role="tablist"
+      role="navigation"
       aria-label={ariaLabel}
     >
       {Array.from({ length }, (_, i) => i).map((index) => {
@@ -38,8 +38,8 @@ export function SliderDots({
               focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2
             `}
             aria-label={`Go to slide ${index + 1}`}
-            aria-controls={`slide-${index}`}
-            id={`slide-tab-${index}`}
+            aria-current={isActive ? "true" : "false"}
+            tabIndex={0}
           />
         );
       })}

@@ -16,7 +16,7 @@ export function ButtonContent(props: ButtonProps) {
   } = props;
 
   const resolvedTextColor =
-    textColor || (variant === "primary" ? "text-background" : "text-secondary");
+    textColor || (variant === "primary" ? "text-white" : "text-secondary");
 
   return (
     <>
