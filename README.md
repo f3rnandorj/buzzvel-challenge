@@ -1,5 +1,5 @@
-![GitHub License](https://img.shields.io/github/license/f3rnandorj/buzzvel-challenge?style=flat&logo=Utech&logoColor=%23ea580c&label=Fernando%20H&color=blue)
-![Static Badge](https://img.shields.io/badge/Buzzvel-Utech-%23ea580c?link=https%3A%2F%2Fbuzzvel.com%2F)
+[![GitHub License](https://img.shields.io/github/license/f3rnandorj/buzzvel-challenge?style=flat&logo=Utech&logoColor=%23ea580c&label=Fernando%20H&color=blue)](https://github.com/f3rnandorj/buzzvel-challenge/blob/main/LICENSE)
+[![Static Badge](https://img.shields.io/badge/Buzzvel-Utech-%23ea580c?link=https%3A%2F%2Fbuzzvel.com%2F)](https://buzzvel.com/)
 
 > **Note:** This documentation is available in [English](#buzzvel-challenge) and [Português](#desafio-buzzvel-português). (Desca a tela para ter acesso a versão em português)
 
@@ -65,7 +65,15 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
   - `/page.tsx`: Main landing page
   - `/(auth)/`: Authentication routes
     - `/signin/`: Sign in page and components
+      - `page.tsx`: Sign in page
+      - `signInSchema.ts`: Form validation schema
+      - `/components/`: Sign in components
+        - `SignInForm.tsx`: Sign in form component
     - `/signup/`: Sign up page and components
+      - `page.tsx`: Sign up page
+      - `signUpSchema.ts`: Form validation schema  
+      - `/components/`: Sign up components
+        - `SignUpForm.tsx`: Sign up form component
   - `/components/`: Page-specific components organized by sections
     - `/HeroSection/`: Hero banner section
     - `/FeaturesSection/`: Features showcase section
@@ -188,7 +196,15 @@ Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver o 
   - `/page.tsx`: Página principal da landing page
   - `/(auth)/`: Rotas de autenticação
     - `/signin/`: Página e componentes de login
+      - `page.tsx`: Página de login
+      - `signInSchema.ts`: Esquema de validação do formulário
+      - `/components/`: Componentes de login
+        - `SignInForm.tsx`: Componente de formulário de login
     - `/signup/`: Página e componentes de cadastro
+      - `page.tsx`: Página de cadastro
+      - `signUpSchema.ts`: Esquema de validação do formulário  
+      - `/components/`: Componentes de cadastro
+        - `SignUpForm.tsx`: Componente de formulário de cadastro
   - `/components/`: Componentes específicos de página organizados por seções
     - `/HeroSection/`: Seção do banner principal
     - `/FeaturesSection/`: Seção de exibição de recursos
