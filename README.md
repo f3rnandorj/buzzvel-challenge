@@ -5,6 +5,8 @@
 
 Deploy: https://buzzvel-challenge-omega.vercel.app/
 
+![image](https://github.com/user-attachments/assets/05bcdddc-3b1c-468c-8527-7042a1bb1b2e)
+
 # Buzzvel Challenge 🇺🇸
 
 ## About the Project
