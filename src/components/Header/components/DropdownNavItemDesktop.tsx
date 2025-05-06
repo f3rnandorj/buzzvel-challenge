@@ -148,29 +148,30 @@ export function DropdownNavItemDesktop({ title, items }: Props) {
       </button>
 
       {isOpen && (
-        <div
+        <ul
           className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border border-gray-100"
           role="menu"
           aria-labelledby={buttonId}
           id={menuId}
         >
           {items.map((item, index) => (
-            <button
-              ref={(el) => setMenuItemRef(el, index)}
-              key={item.title}
-              className="block w-full px-4 py-2 text-sm hover:bg-gray-50"
-              onClick={item.onClick}
-              role="menuitem"
-              tabIndex={isOpen ? 0 : -1}
-              onKeyDown={(e) => handleMenuItemKeyDown(e, index)}
-              aria-current={activeIndex === index ? "page" : undefined}
-            >
-              <Text as="span" preset="paragraphSmall">
-                {item.title}
-              </Text>
-            </button>
+            <li key={item.title} role="none">
+              <button
+                ref={(el) => setMenuItemRef(el, index)}
+                className="block w-full px-4 py-2 text-sm hover:bg-gray-50 text-left"
+                onClick={item.onClick}
+                role="menuitem"
+                tabIndex={isOpen ? 0 : -1}
+                onKeyDown={(e) => handleMenuItemKeyDown(e, index)}
+                aria-current={activeIndex === index ? "page" : undefined}
+              >
+                <Text as="span" preset="paragraphSmall">
+                  {item.title}
+                </Text>
+              </button>
+            </li>
           ))}
-        </div>
+        </ul>
       )}
     </div>
   );
