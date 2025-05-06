@@ -1,7 +1,7 @@
 import { Text } from "@/components";
 import Link from "next/link";
 import Image from "next/image";
-import { SignInForm } from "../components/SignInForm";
+import { SignInForm } from "./components/SignInForm";
 
 export default function SignInPage() {
   return (

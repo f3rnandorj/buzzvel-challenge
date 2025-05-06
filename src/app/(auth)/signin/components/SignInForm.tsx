@@ -4,7 +4,7 @@ import { TextInputControlled, Button } from "@/components";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
-import { SignInFormData, signInFormSchema } from "./signUpSchema";
+import { SignInFormData, signInFormSchema } from "../signInSchema";
 import { toast } from "react-toastify";
 
 export function SignInForm() {
