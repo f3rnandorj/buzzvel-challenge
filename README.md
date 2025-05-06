@@ -136,7 +136,7 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 ---
 
-# Desafio Buzzvel (Português) 🇧🇷
+# Desafio Buzzvel 🇧🇷
 
 ## Sobre o Projeto
 
