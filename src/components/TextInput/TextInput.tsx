@@ -13,12 +13,14 @@ interface InputProps
   extends BaseTextInputProps,
     React.InputHTMLAttributes<HTMLInputElement> {
   as?: "input";
+  [key: `data-${string}`]: string | number | boolean;
 }
 
 interface TextAreaProps
   extends BaseTextInputProps,
     React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   as: "textarea";
+  [key: `data-${string}`]: string | number | boolean;
 }
 
 export type TextInputProps = InputProps | TextAreaProps;
@@ -82,7 +84,11 @@ export function TextInput({
         )}
 
         {rightIcon?.name && (
-          <div className="absolute right-3" aria-hidden="true">
+          <div
+            data-testid="right-icon-text-input"
+            className="absolute right-3"
+            aria-hidden={!!rightIcon}
+          >
             <Icon {...rightIcon} />
           </div>
         )}
