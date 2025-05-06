@@ -5,9 +5,13 @@ import { SubHeroHighlightedTitle } from "./components/SubHeroHighlightedTitle";
 import { SubHeroCheckItem } from "./components/SubHeroCheckItem";
 import { ListServiceCard } from "./components/ListServiceCard";
 
-export function SubHeroSection() {
+interface Props {
+  id: string;
+}
+
+export function SubHeroSection({ id }: Props) {
   return (
-    <section className="w-full my-8 md:my-12">
+    <section id={id} className="w-full my-8 md:my-12">
       <div className="max-w-[90rem] px-4 sm:px-8 lg:px-20 mx-auto grid grid-cols-1 2xl:grid-cols-[30.625rem_1fr] items-center -mb-20 sm:mb-0">
         {/* Texts */}
         <div className="flex flex-col gap-8">

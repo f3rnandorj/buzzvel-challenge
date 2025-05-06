@@ -7,9 +7,13 @@ import {
   Text,
 } from "@/components";
 
-export function FeaturesSection() {
+interface Props {
+  id: string;
+}
+
+export function FeaturesSection({ id }: Props) {
   return (
-    <section className="w-full my-8 md:my-12 ">
+    <section id={id} className="w-full my-8 md:my-12 ">
       <div className="max-w-[90rem] px-4 sm:px-8 lg:px-20 mx-auto grid grid-cols-1 2xl:grid-cols-[37rem_1fr] gap-12 lg:gap-20 items-center">
         <div className="flex flex-col gap-6 md:gap-8 ">
           <HighlightedTitle

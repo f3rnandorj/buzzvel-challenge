@@ -19,7 +19,7 @@ export default function Home() {
 
       <HeroSection />
 
-      <SubHeroSection />
+      <SubHeroSection id="products" />
 
       <ClientReviewCarouselSection />
 
@@ -29,13 +29,13 @@ export default function Home() {
 
       <TestimonialsSection />
 
-      <FeaturesSection />
+      <FeaturesSection id="solutions" />
 
       <SignUpSection />
 
-      <GetInTouchSection />
+      <GetInTouchSection id="pricing" />
 
-      <FooterSection />
+      <FooterSection id="contact-us" />
     </div>
   );
 }

@@ -1,23 +1,32 @@
-import Link from "next/link";
 import { Text } from "@/components";
 
 interface Props {
-  href: string;
+  elementIdToSwipe: string;
   title: string;
   ariaLabel?: string;
 }
 
-export function NavItem({ href, title, ariaLabel }: Props) {
+export function NavItem({ elementIdToSwipe, title, ariaLabel }: Props) {
+  function scrollToComponent() {
+    const element = document.getElementById(elementIdToSwipe);
+
+    element?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "end",
+    });
+  }
+
   return (
-    <Link
+    <button
       className="hover:text-primary transition-colors"
-      href={href}
+      onClick={scrollToComponent}
       aria-label={ariaLabel}
       role="menuitem"
     >
       <Text as="span" preset="item">
         {title}
       </Text>
-    </Link>
+    </button>
   );
 }

@@ -53,12 +53,11 @@ export function DrawerMobile({ setIsOpen }: Props) {
         </div>
 
         <nav className="flex flex-col gap-4 mt-8">
-          <NavItem href="" title="Products" />
-          <NavItem href="" title="Solutions" />
-          <NavItem href="" title="Pricing" />
-          <NavItem href="/docs" title="Documentation" />
-          <NavItem href="/blog" title="Blog" />
-          <NavItem href="/support" title="Support" />
+          <NavItem elementIdToSwipe="products" title="Products" />
+          <NavItem elementIdToSwipe="solutions" title="Solutions" />
+          <NavItem elementIdToSwipe="pricing" title="Pricing" />
+          <NavItem elementIdToSwipe="/docs" title="Documentation" />
+          <NavItem elementIdToSwipe="contact-us" title="Contact us" />
         </nav>
 
         <div className="mt-auto flex flex-col gap-2">

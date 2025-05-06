@@ -2,11 +2,10 @@
 
 import { useEffect, useRef, useState, KeyboardEvent, useCallback } from "react";
 import { Text, Icon } from "@/components";
-import Link from "next/link";
 
 interface Props {
   title: string;
-  items: { href: string; title: string }[];
+  items: { elementIdToSwipe: string; title: string }[];
 }
 
 export function DropdownNavItemDesktop({ title, items }: Props) {
@@ -14,44 +13,27 @@ export function DropdownNavItemDesktop({ title, items }: Props) {
   const [activeIndex, setActiveIndex] = useState(-1);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
-  const menuItemsRef = useRef<(HTMLAnchorElement | null)[]>([]);
+  const menuItemsRef = useRef<(HTMLButtonElement | null)[]>([]);
 
   const menuId = `dropdown-menu-${title.toLowerCase().replace(/\s+/g, "-")}`;
   const buttonId = `dropdown-button-${title
     .toLowerCase()
     .replace(/\s+/g, "-")}`;
 
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setIsOpen(false);
-      }
-    }
+  function scrollToComponent(elementIdToSwipe: string) {
+    const blockPositionScroll: ScrollIntoViewOptions["block"] =
+      elementIdToSwipe === "contact-us" ? "start" : "center";
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+    const element = document.getElementById(elementIdToSwipe);
 
-  // Reset active index when menu closes
-  useEffect(() => {
-    if (!isOpen) {
-      setActiveIndex(-1);
-    }
-  }, [isOpen]);
+    element?.scrollIntoView({
+      behavior: "smooth",
+      block: blockPositionScroll,
+      inline: "end",
+    });
+  }
 
-  const setMenuItemRef = useCallback(
-    (el: HTMLAnchorElement | null, index: number) => {
-      if (el) {
-        menuItemsRef.current[index] = el;
-      }
-    },
-    []
-  );
-
-  const handleButtonKeyDown = (e: KeyboardEvent<HTMLButtonElement>) => {
+  function handleButtonKeyDown(e: KeyboardEvent<HTMLButtonElement>) {
     switch (e.key) {
       case "ArrowDown":
       case "Down":
@@ -70,12 +52,13 @@ export function DropdownNavItemDesktop({ title, items }: Props) {
         setIsOpen(!isOpen);
         break;
     }
-  };
+  }
 
-  const handleMenuItemKeyDown = (
-    e: KeyboardEvent<HTMLAnchorElement>,
+  function handleMenuItemKeyDown(
+    e: KeyboardEvent<HTMLButtonElement>,
     index: number
-  ) => {
+  ) {
+    console.log("Key pressed:", e.key);
     switch (e.key) {
       case "ArrowDown":
       case "Down":
@@ -119,7 +102,36 @@ export function DropdownNavItemDesktop({ title, items }: Props) {
         }
         break;
     }
-  };
+  }
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    if (!isOpen) {
+      setActiveIndex(-1);
+    }
+  }, [isOpen]);
+
+  const setMenuItemRef = useCallback(
+    (el: HTMLButtonElement | null, index: number) => {
+      if (el) {
+        menuItemsRef.current[index] = el;
+      }
+    },
+    []
+  );
 
   return (
     <div className="relative" ref={dropdownRef}>
@@ -151,12 +163,14 @@ export function DropdownNavItemDesktop({ title, items }: Props) {
           id={menuId}
         >
           {items.map((item, index) => (
-            <Link
+            <button
               ref={(el) => setMenuItemRef(el, index)}
-              key={item.href}
-              href={item.href}
-              className="block px-4 py-2 text-sm hover:bg-gray-50"
-              onClick={() => setIsOpen(false)}
+              key={item.elementIdToSwipe}
+              className="block w-full px-4 py-2 text-sm hover:bg-gray-50"
+              onClick={() => {
+                scrollToComponent(item.elementIdToSwipe);
+                setIsOpen(false);
+              }}
               role="menuitem"
               tabIndex={isOpen ? 0 : -1}
               onKeyDown={(e) => handleMenuItemKeyDown(e, index)}
@@ -165,7 +179,7 @@ export function DropdownNavItemDesktop({ title, items }: Props) {
               <Text as="span" preset="paragraphSmall">
                 {item.title}
               </Text>
-            </Link>
+            </button>
           ))}
         </div>
       )}

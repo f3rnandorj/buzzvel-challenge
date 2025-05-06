@@ -7,11 +7,16 @@ import { Icon, LinkText, Text } from "@/components";
 import { useGetWindowWidth } from "@/hooks";
 import Link from "next/link";
 
-export function FooterSection() {
+interface Props {
+  id: string;
+}
+
+export function FooterSection({ id }: Props) {
   const { windowWidth } = useGetWindowWidth();
 
   return (
     <footer
+      id={id}
       className="w-full bg-secondary py-12 md:py-22"
       role="contentinfo"
       aria-label="Site footer"

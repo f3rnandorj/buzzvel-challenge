@@ -34,15 +34,15 @@ export function Header() {
           className="hidden md:flex items-center justify-between w-full gap-12"
           aria-label="Main navigation"
         >
-          <NavItem href="" title="Products" />
-          <NavItem href="" title="Solutions" />
-          <NavItem href="" title="Pricing" />
+          <NavItem elementIdToSwipe="products" title="Products" />
+          <NavItem elementIdToSwipe="solutions" title="Solutions" />
+          <NavItem elementIdToSwipe="pricing" title="Pricing" />
+          {/* TODO: Add a link to the Documentation when it's ready */}
           <DropdownNavItemDesktop
             title="Resources"
             items={[
-              { href: "/docs", title: "Documentation" },
-              { href: "/blog", title: "Blog" },
-              { href: "/support", title: "Support" },
+              { elementIdToSwipe: "/docs", title: "Documentation" },
+              { elementIdToSwipe: "contact-us", title: "Contact us" },
             ]}
           />
         </nav>
