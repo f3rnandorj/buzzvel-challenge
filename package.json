@@ -10,7 +10,7 @@
     "prepare": "husky",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "coverage": "jest --verbose --coverage"
+    "test:coverage": "jest --verbose --coverage"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",

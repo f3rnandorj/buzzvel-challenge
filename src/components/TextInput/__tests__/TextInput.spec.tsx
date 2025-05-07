@@ -19,7 +19,7 @@ function renderComponent(props?: TextInputProps) {
   };
 }
 
-describe("TextInput component", () => {
+describe("<TextInput /> component", () => {
   it("renders with a label when provided", () => {
     const { input, label } = renderComponent({
       label: "Username",

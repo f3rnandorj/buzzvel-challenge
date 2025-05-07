@@ -23,7 +23,7 @@ function renderComponent(props?: Partial<CombinedButtonProps>) {
   };
 }
 
-describe("Button component", () => {
+describe("<Button /> component", () => {
   it("renders correctly with title", () => {
     const { titleElement } = renderComponent();
     expect(titleElement).toBeInTheDocument();
