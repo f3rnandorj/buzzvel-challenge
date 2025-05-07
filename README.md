@@ -155,6 +155,49 @@ The favicon for this project was generated using [RealFaviconGenerator](https://
 3. Test the responsiveness by resizing your browser window
 4. Interact with the carousel components in the testimonials section
 
+## CI/CD Automation
+
+The project uses GitHub Actions workflows to automate the Continuous Integration process:
+
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/f3rnandorj/buzzvel-challenge/pull-request-checks.yml?label=CI&logo=github&style=flat)](https://github.com/f3rnandorj/buzzvel-challenge/actions)
+
+A CI pipeline runs automatically on every pull request to the `main` and `dev` branches, performing the following checks:
+
+- **Code Linting**: Enforces code style and catches potential issues with ESLint
+- **TypeScript Compilation**: Verifies type safety by running the TypeScript compiler
+- **Automated Testing**: Runs the full test suite with Jest
+
+These automated checks help maintain code quality and prevent regressions by validating each change before it's merged.
+
+```yaml
+# .github/workflows/pull-request-checks.yml
+name: Pull Request Checks
+
+on:
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install Packages
+        run: yarn install
+      - name: Run Lint
+        run: yarn lint
+      - name: Run TypeScript compiler
+        run: yarn tsc --noEmit
+      - name: Run test
+        run: yarn test
+```
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
@@ -308,6 +351,49 @@ O favicon deste projeto foi gerado usando [RealFaviconGenerator](https://realfav
 2. Clique em "Entrar" ou "Cadastrar" para ver os formulários de autenticação
 3. Teste a responsividade redimensionando a janela do seu navegador
 4. Interaja com os componentes de carrossel na seção de depoimentos
+
+## Automação de CI/CD
+
+O projeto utiliza fluxos de trabalho do GitHub Actions para automatizar o processo de Integração Contínua:
+
+[![Status do Fluxo de Trabalho GitHub](https://img.shields.io/github/actions/workflow/status/f3rnandorj/buzzvel-challenge/pull-request-checks.yml?label=CI&logo=github&style=flat)](https://github.com/f3rnandorj/buzzvel-challenge/actions)
+
+Um pipeline de CI é executado automaticamente em cada pull request para as branches `main` e `dev`, realizando as seguintes verificações:
+
+- **Linting de Código**: Impõe o estilo de código e detecta possíveis problemas com ESLint
+- **Compilação TypeScript**: Verifica a segurança de tipos executando o compilador TypeScript
+- **Testes Automatizados**: Executa a suíte completa de testes com Jest
+
+Essas verificações automatizadas ajudam a manter a qualidade do código e prevenir regressões, validando cada alteração antes que seja mesclada.
+
+```yaml
+# .github/workflows/pull-request-checks.yml
+name: Pull Request Checks
+
+on:
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install Packages
+        run: yarn install
+      - name: Run Lint
+        run: yarn lint
+      - name: Run TypeScript compiler
+        run: yarn tsc --noEmit
+      - name: Run test
+        run: yarn test
+```
 
 ## Licensa
 
