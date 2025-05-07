@@ -16,7 +16,7 @@ export function HeroSection() {
 
           <HeroSectionParagraph />
 
-          <div className="flex lg:pb-12">
+          <div className="flex lg:pb-12 gap-2">
             <Button
               href="/signup"
               title="Sign Up Now"

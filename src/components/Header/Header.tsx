@@ -64,7 +64,7 @@ export function Header() {
       </div>
 
       {/* Signin / SignUp */}
-      <div className="hidden md:flex">
+      <div className="hidden md:flex gap-2">
         <Button
           href="/signin"
           title="Log In"
