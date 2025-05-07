@@ -5,6 +5,12 @@
 
 Deploy: https://buzzvel-challenge-omega.vercel.app/
 
+🇺🇸 You can also see the application works here:   
+https://drive.google.com/file/d/1SqmA20GQb9ta2bw5O6hVWChaXe3FN0Vi/view?usp=sharing
+
+🇧🇷 Você também pode ver a aplicação funcionando por aqui:
+https://drive.google.com/file/d/1SqmA20GQb9ta2bw5O6hVWChaXe3FN0Vi/view?usp=sharing
+
 ![image](https://github.com/user-attachments/assets/05bcdddc-3b1c-468c-8527-7042a1bb1b2e)
 
 # Buzzvel Challenge 🇺🇸
