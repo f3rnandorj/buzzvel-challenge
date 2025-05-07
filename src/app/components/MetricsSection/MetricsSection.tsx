@@ -15,7 +15,17 @@ export function MetricsSection() {
 }
 
 const dataToMap: MetricItemProps[] = [
-  { iconName: "heart", value: "195", description: "user countries" },
-  { iconName: "diamond", value: "1M", description: "valued teachers" },
-  { iconName: "mortarboard", value: "17M", description: "happy students" },
+  { iconName: "heart", value: 195, description: "user countries" },
+  {
+    iconName: "diamond",
+    value: 1,
+    measure: "M",
+    description: "valued teachers",
+  },
+  {
+    iconName: "mortarboard",
+    value: 17,
+    measure: "M",
+    description: "happy students",
+  },
 ];
