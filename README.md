@@ -66,7 +66,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## How to Run Tests
 
-This project includes both unit tests and component tests using Jest and React Testing Library. Here's how to run them:
+This project includes component tests using Jest and React Testing Library. Here's how to run them:
 
 ```bash
 # Run all tests
@@ -220,7 +220,7 @@ Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver o 
 
 ## Como Executar os Testes
 
-Este projeto inclui testes unitários e testes de componentes usando Jest e React Testing Library. Veja como executá-los:
+Este projeto inclui testes de componentes usando Jest e React Testing Library. Veja como executá-los:
 
 ```bash
 # Executar todos os testes
